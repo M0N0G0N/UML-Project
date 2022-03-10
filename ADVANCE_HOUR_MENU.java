@@ -1,7 +1,7 @@
 package com.company;
 
 public class ADVANCE_HOUR_MENU extends MENU{
-    int Passengers;
+    static int Passengers;
     int Current_Time;
     String[] Past_Hour_Events;
     int Request_Number;
@@ -28,11 +28,11 @@ public class ADVANCE_HOUR_MENU extends MENU{
 
     }
 
-    public int Count_Passengers() {
+    public String[] Collect_Events(String Event_Desc) {
 
     }
 
-    public String[] Collect_Events(String Event_Desc) {
-
+    public static void setPassengers(int passengers) {
+        Passengers = passengers;
     }
 }

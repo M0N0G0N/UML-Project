@@ -16,14 +16,23 @@ public class PLANE {
     }
 
     public void Add_Fuel(int Fuel_Added){
-
+        Fuel_Left = Fuel_Left + Fuel_Added;
+        Kill_Plane(true);
     }
 
-    public void Kill_Passengers(int Killed_Passengers) {
-
+    public void Kill_Passengers(int Killed_Passengers) { //Kill Passengers
+        Dead_Passengers = Dead_Passengers - Killed_Passengers;
+        Kill_Plane(false);
     }
 
     public void Kill_Plane(boolean Kill){
-
+        if (Total_Passengers == Dead_Passengers) {
+            //TODO: print warning that a plane died because every passenger is dead
+        }
+        else if (Fuel_Left == 0) {
+            //TODO: print warning that a plane died because there is no fuel left
+            Dead_Passengers = Total_Passengers;
+            ADVANCE_HOUR_MENU.setPassengers(Total_Passengers);
+        }
     }
 }
