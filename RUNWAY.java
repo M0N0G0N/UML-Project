@@ -2,7 +2,7 @@ package com.company;
 
 public class RUNWAY {
     int Runway_Number;
-    PLANE Name_Of_Occupant;
+    static PLANE Name_Of_Occupant;
     int Occupied_Time_Remaining;
 
     public RUNWAY(int runway_Number, PLANE name_Of_Occupant, int occupied_Time_Remaining) {
@@ -16,8 +16,12 @@ public class RUNWAY {
     }
 
     public void Free_Runway() {
-        this.Name_Of_Occupant = null;
+        Name_Of_Occupant = null;
         this.Occupied_Time_Remaining = 0;
+    }
+
+    public static void Receive_Plane(PLANE Plane) {
+        Name_Of_Occupant = Plane;
     }
 
     public void setRunway_Number(int runway_Number) {
