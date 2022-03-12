@@ -1,10 +1,10 @@
 package com.company;
 
 public class MAIN_MENU {
-    RUNWAY_MENU Runway = null;
-    WAITING_PLANES_MENU Waiting_Planes = null;
-    ADVANCE_HOUR_MENU Advance_Hour = null;
-    REQUESTS_MENU Requests_menu = null;
+    RUNWAY_MENU Runway;
+    WAITING_PLANES_MENU Waiting_Planes;
+    ADVANCE_HOUR_MENU Advance_Hour;
+    REQUESTS_MENU Requests_menu;
 
     public MAIN_MENU(RUNWAY_MENU runway, WAITING_PLANES_MENU waiting_Planes, ADVANCE_HOUR_MENU advance_Hour, REQUESTS_MENU requests_menu) {
         Runway = runway;

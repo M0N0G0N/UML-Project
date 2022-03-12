@@ -7,12 +7,12 @@ public class PLANE {
     int Fuel_Left;
     int Refuel_Time;
 
-    public PLANE() {
-        //TODO: make a name randomizer
-        //TODO: make a Total Passenger randomizer
+    public PLANE(String PLANE_TYPE) {
+        this.name = PLANE_BANK.Get_Random_Name();
+        this.Total_Passengers = PLANE_BANK.Gen_Total_Passengers(PLANE_TYPE);
         Dead_Passengers = 0;
-        //TODO: make a Fuel_Left randomizer
-        //TODO: make a Refuel_Time randomizer
+        this.Fuel_Left = PLANE_BANK.Gen_Fuel_Left(PLANE_TYPE);
+        this.Refuel_Time = PLANE_BANK.Gen_Refuel_Time(PLANE_TYPE);
     }
 
     public void Add_Fuel(int Fuel_Added){ //Adds or Remove fuel to the plane, calls Kill_Plane to see if there's still fuel
