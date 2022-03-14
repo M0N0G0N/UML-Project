@@ -92,7 +92,7 @@ public class Main {
                     waiting_Planes_menu.display_Waiting_menu();
                     
                     System.out.println("What do you want ? ") ;                    
-                    if(runway_Menu.Call_For_Available(true) != -1){
+                    if(runway_Menu.Call_For_Available(true, 1).size() != 0){
                         System.out.println("  Select a plane to land") ; 
                     };
                     System.out.println("  Return to main menu ") ; 

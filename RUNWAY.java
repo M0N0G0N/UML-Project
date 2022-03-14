@@ -21,15 +21,6 @@ public class RUNWAY {
         this.Occupied_Time_Remaining = 0;
     }
 
-    public boolean is_Free_Runway() {
-        if (Name_Of_Occupant = null ) {
-            if (this.Occupied_Time_Remaining = 0 ){
-                return true ; 
-            }
-        }
-        else return false ; 
-    }
-
     public static void Receive_Plane(PLANE Plane) {
         Name_Of_Occupant = Plane;
     }

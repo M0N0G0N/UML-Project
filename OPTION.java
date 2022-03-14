@@ -17,20 +17,8 @@ public class OPTION {
         return bool  ; 
     }
 
-    public boolean IsValid(int free_runway, ArrayList<RUNWAY> runway) {   // Option valid if there are free_runway number of runways empty 
-        int count = 0 ; 
-        for ( int i = 0 ; i<runway.size()-1 ; i++ ){
-            if (runway.get(i).is_Free_Runway()){  
-                count ++ ; 
-            }
-        }
-        if(count >= free_runway ){
-            return true ; 
-        }
-        else{
-            return false  ; 
-        } 
-
+    public boolean IsValid(int free_runway) {   // Option valid if there are free_runway number of runways empty
+        return RUNWAY_MENU.Call_For_Available(true, free_runway).size() >= free_runway;
     }
 
     public boolean IsValid(PLANE Planes) {

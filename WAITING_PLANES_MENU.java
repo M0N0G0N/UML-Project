@@ -28,7 +28,7 @@ public class WAITING_PLANES_MENU extends MENU{
 
     //FIXME: unnecessary function?
     public boolean Can_Plane_Land() { //Return False if -1 is returned.
-        return RUNWAY_MENU.Call_For_Available(true) != -1;
+        return RUNWAY_MENU.Call_For_Available(true, 1).size() != 0;
     }
 
     public void Pass_To_Runway(String name) {
