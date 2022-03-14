@@ -15,7 +15,7 @@ public class REQUESTS_MENU extends MENU {
     }
 
     public boolean Can_Be_Displayed() {
-        if (Request_List.length == 0 ) {
+        if (Request_List ==null || Request_List.length == 0 ) { 
             return false  ; 
         }
         else return true;

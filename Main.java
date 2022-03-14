@@ -8,7 +8,7 @@ public class Main {
         //Random rn = new Random();
         //int nb_of_request = rn.nextInt(3-1) + 1;   // user receive a random number of requests (1-3)
 
-        
+        //---------TEST REQUEST ----------------
         System.out.println("Hello World");
        
         OPTION option1 = new OPTION("Allow landing", "1 empty runway", "Plane lands and occupies the runway for stated time") ; 
@@ -23,12 +23,14 @@ public class Main {
         int option = input.nextInt() ; 
         
         System.out.println("Option chosen : " + requests_Options[option]) ; 
+        // ---------------------------------------
+
 
 
         RUNWAY_MENU runway_Menu = new RUNWAY_MENU(8); 
         WAITING_PLANES_MENU waiting_Planes_menu = new WAITING_PLANES_MENU() ; 
         ADVANCE_HOUR_MENU advance_Hour = new ADVANCE_HOUR_MENU() ; 
-        REQUESTS_MENU requests_menu = REQUESTS_MENU() ; 
+        REQUESTS_MENU requests_menu = new REQUESTS_MENU() ; 
         
         MAIN_MENU main_Menu = new MAIN_MENU(runway_Menu, waiting_Planes_menu, advance_Hour, requests_menu) ;
 
@@ -46,25 +48,34 @@ public class Main {
             */
             switch(menu){
                 case 1 : // main_menu 
-                    int index = 1 ; 
-                    System.out.println("-----------Menu Options----------") ; 
+                    System.out.println("-----------MAIN MENU----------\n") ; 
+                    System.out.println("-----------Menu Options----------\n") ; 
                     if (requests_menu.Can_Be_Displayed()) {
-                        System.out.println(index + ")  Request Menu");
-                        i++ ; 
+                        System.out.println("  Request Menu");
                     }                    
-                    System.out.println(index + ")  Waiting Planes Menu");
-                    i++ ; 
+                    System.out.println("  Waiting Planes Menu");
                     if (requests_menu.Can_Be_Displayed()==false ) {
-                        System.out.println(index + ")  Advance to the next hour");
-                        i++ ; 
+                        System.out.println("  Advance to the next hour");
                     }
                     System.out.print("Go to  : " ) ; 
-                    menu = input.nextInt() ; 
-                    index = 1 ; //reset index
+                    String choice = input.next() ; 
+                    choice = choice.toUpperCase() ; 
+                    
+                    // !!!!!!!! securité : supprimer les espaces devant et derrriere 
+                    if(choice =="REQUEST MENU"){
+                        menu = 4 ; 
+                    }
+                    else if(choice =="WAITING PLANES"){
+                        menu = 3 ; 
+                    }
+                    else if (choice == "ADVANCE HOUR"){
+                        menu = 5 ; 
+                    }
+
                     break;
                 
                 case 2 : //runway menu
-
+                    System.out.println("-----------RUNWAY MENU----------\n") ; 
                 
                 case 3 :  //waiting planes menu
                     /*
@@ -77,20 +88,35 @@ public class Main {
 
                     */
 
+                    System.out.println("-----------WAITING PLANES MENU----------\n") ; 
                     waiting_Planes_menu.display_Waiting_menu();
                     
                     System.out.println("What do you want ? ") ;                    
                     if(runway_Menu.Call_For_Available(true) != -1){
-                        System.out.println(index+ ")  Select a plane to land") ; 
+                        System.out.println("  Select a plane to land") ; 
                     };
-                    Sytem.out.out.println(index + ")  Return to main menu ") ; 
-                    System.out.print("Go to ");
-                    int choice = input.nextInt() ; 
+                    System.out.println("  Return to main menu ") ; 
+                    
+                    System.out.print("You want to : " ) ; 
+                    choice = input.next() ; 
+                    choice = choice.toUpperCase() ; 
+                    
+                    // !!!!!!!! securité : supprimer les espaces devant et derrriere 
+                    if(choice =="SELECT A PLANE TO LAND"){
+                        //code here 
+                    }
+                    else if(choice =="RETURN TO MAIN MENU"){
+                        menu = 1 ;  
+                    }
 
-                    //PROBLEME : pas tjrs le meme index 
+
                     break;
                 
+                case 4 : //request menu
+                    System.out.println("-----------REQUESTS MENU----------\n") ; 
                 
+                case 5 : //advance hour menu
+                    System.out.println("-----------ADVANCE HOUR MENU----------\n") ;    
 
                 default:
                     // code block
