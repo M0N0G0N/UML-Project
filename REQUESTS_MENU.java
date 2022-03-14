@@ -9,15 +9,16 @@ public class REQUESTS_MENU extends MENU {
 
     }
 
+
     public REQUESTS_MENU(REQUEST[] request_List) {
         Request_List = request_List;
     }
 
     public boolean Can_Be_Displayed() {
         if (Request_List.length == 0 ) {
-            return true  ; 
+            return false  ; 
         }
-        else return false;
+        else return true;
     }
 
     public REQUEST Choose_Request() {

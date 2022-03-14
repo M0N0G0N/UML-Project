@@ -41,4 +41,18 @@ public class WAITING_PLANES_MENU extends MENU{
             }
         }
     }
+
+    public void display_Waiting_menu() {
+        System.out.println("----------Waiting planes--------");
+        System.out.println("Plane name      | Fuel left         ");
+        for (int i = 0 ; i<Planes.size() ; i++ ){
+            System.out.println(Planes.get(i).name + "       | "+ Planes.get(i).Fuel_Left+"\n") ; 
+        }
+        System.out.println("\n"); 
+    }
+
+
+
+
+
 }
