@@ -9,6 +9,10 @@ public class ADVANCE_HOUR_MENU extends MENU{
     static List<String> Past_Hour_Events = new ArrayList<>();
     int Request_Number;
 
+    public ADVANCE_HOUR_MENU(){
+        
+    }
+
     public ADVANCE_HOUR_MENU(int passengers, int current_Time, int request_Number) {
         Passengers = passengers;
         Current_Time = current_Time;

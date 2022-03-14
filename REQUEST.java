@@ -1,4 +1,6 @@
 package com.company;
+import java.util.* ; 
+import java.lang.* ; 
 
 public class REQUEST {
     int Rarity;
@@ -14,6 +16,28 @@ public class REQUEST {
     }
 
     public void Choose_Option(int Option) {
+        
+
 
     }
+
+
+    public String toString() {
+        String list ="" ; 
+        for (int i = 0 ; i <Requests_Options.length ; i ++){
+            
+            list = list + Integer.toString(i) + ")" + Requests_Options[i].toString() ; 
+        }
+        return "\n---------REQUEST---------  \n"
+                + "   Rarety = " + Rarity +
+                "\n   Title = " + Title +
+                "\n   Description = " + Description + "\n\n" + 
+                list ; 
+    }
+
+
+
+
+
+
 }

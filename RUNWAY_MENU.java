@@ -26,7 +26,7 @@ public class RUNWAY_MENU extends MENU{
         }
     }
 
-    public static int Call_For_Available(boolean Free) { //If free is true, then we look to see if there's a runway that's freed of any plane. If false, then we look to see for the first runway that's occupied.
+    public int Call_For_Available(boolean Free) { //If free is true, then we look to see if there's a runway that's freed of any plane. If false, then we look to see for the first runway that's occupied.
         for (int i = 0; i < Runways.size(); i++) {
             if (Runways.get(i).getName_Of_Occupant() == null && Free) //If free is true and there's nothing here, we return the index
                 return i;
@@ -35,4 +35,7 @@ public class RUNWAY_MENU extends MENU{
         }
         return -1; //Else, we return -1 to show that there's no result available.
     }
+
+
+
 }
