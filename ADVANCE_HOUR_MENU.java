@@ -30,12 +30,14 @@ public class ADVANCE_HOUR_MENU extends MENU{
     public void Display_Game_Over(int Passengers) {
             if (Passengers >= 350){
                 System.out.println("-----------GAME OVER ...----------\n") ;
+                System.exit(0);
         }
     }
 
     public void Display_Victory(int current_Time) {
         if (current_Time >= 24){  //24h
             System.out.println("-----------VICTORY !----------\n") ;
+            System.exit(0);
         }
     }
 
