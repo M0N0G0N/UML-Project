@@ -11,7 +11,7 @@ public class RUNWAY_MENU extends MENU{
         }
     }
 
-    public void Display_Index() {
+    public static void Display_Index() {
 
     }
 

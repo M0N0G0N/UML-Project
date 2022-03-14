@@ -13,7 +13,7 @@ public class MAIN_MENU {
         Requests_menu = requests_menu;
     }
 
-    public void Display_Info() {
+    public static void Display_Info() {
 
     }
 

@@ -5,7 +5,10 @@ public class REQUESTS_MENU extends MENU {
     REQUEST[] Chose_Request;
 
     public REQUESTS_MENU(){
-        REQUEST[] Request_LIst ; 
+        REQUEST[] Request_LIst ;
+    }
+
+    public static void Display_requests_menu() {
 
     }
 
@@ -18,13 +21,14 @@ public class REQUESTS_MENU extends MENU {
         return Request_List != null && Request_List.length != 0;
     }
 
-    public REQUEST Choose_Request() {
-        return REQUEST;
-    }
-
-    public int Display_Requests() {
+    public void Choose_Request() {
 
     }
+
+    public static void Display_Requests() {
+
+    }
+
 
     public void Choose_Request(int Request_Choice){
 

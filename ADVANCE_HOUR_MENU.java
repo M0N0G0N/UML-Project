@@ -7,10 +7,14 @@ public class ADVANCE_HOUR_MENU extends MENU{
     static int Passengers;
     int Current_Time;
     static List<String> Past_Hour_Events = new ArrayList<>();
-    int Request_Number;
+    static int Request_Number;
 
     public ADVANCE_HOUR_MENU(){
         
+    }
+
+    public static void Display_Advance_Hour_Menu() {
+
     }
 
     public void Advance_Hour() {
@@ -25,7 +29,7 @@ public class ADVANCE_HOUR_MENU extends MENU{
         Request_Number = request_Number;
     }
 
-    public boolean Can_Be_Displayed() {
+    public static boolean Can_Be_Displayed() {
         return Request_Number == 0;
     }
 
