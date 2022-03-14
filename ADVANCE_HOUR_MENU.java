@@ -27,12 +27,16 @@ public class ADVANCE_HOUR_MENU extends MENU{
         //TODO: Find a pretty way of displaying this menu
     }
 
-    public boolean Display_Game_Over() {
-        //TODO: Find a pretty way of displaying the Game Over screen
+    public void Display_Game_Over(int Passengers) {
+            if (Passengers >= 350){
+                System.out.println("-----------GAME OVER ...----------\n") ;
+        }
     }
 
-    public boolean Display_Victory() {
-        //TODO: Find a pretty way of displaying the Victory screen
+    public void Display_Victory(int current_Time) {
+        if (current_Time >= 24){  //24h
+            System.out.println("-----------VICTORY !----------\n") ;
+        }
     }
 
     public static void Collect_Events(String Event_Desc) {
