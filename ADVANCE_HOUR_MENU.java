@@ -13,6 +13,12 @@ public class ADVANCE_HOUR_MENU extends MENU{
         
     }
 
+    public void Advance_Hour() {
+        Current_Time++;
+        RUNWAY_MENU.Advance_hour_Runway();
+        WAITING_PLANES_MENU.Advance_hour_Waiting_Planes();
+    }
+
     public ADVANCE_HOUR_MENU(int passengers, int current_Time, int request_Number) {
         Passengers = passengers;
         Current_Time = current_Time;

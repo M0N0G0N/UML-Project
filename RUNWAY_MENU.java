@@ -43,4 +43,10 @@ public class RUNWAY_MENU extends MENU{
         return All_Runways; //If nothing was found then we return an empty list.
     }
 
+    public static void Advance_hour_Runway() {
+        for (RUNWAY runways : Runways) {
+            runways.Add_Occupied_Time(-1);
+        }
+    }
+
 }

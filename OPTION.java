@@ -13,16 +13,16 @@ public class OPTION {
         Consequences = consequences;
     }
 
-    public boolean IsValid() {
-        return bool  ; 
+    public boolean IsValid() { //PlaceHolder until we can find something better maybe?
+        return true;
     }
 
-    public boolean IsValid(int free_runway) {   // Option valid if there are free_runway number of runways empty
-        return RUNWAY_MENU.Call_For_Available(true, free_runway).size() >= free_runway;
+    public boolean IsValid(int runway_number, boolean Is_Empty) {   // Option valid if there are runway_number number of runways either empty or full [Is_Empty == True -> Empty Runways]
+        return RUNWAY_MENU.Call_For_Available(Is_Empty, runway_number).size() >= runway_number;
     }
 
-    public boolean IsValid(PLANE Planes) {
-        return bool ; 
+    public boolean IsValid(int Plane_Number) {
+        return WAITING_PLANES_MENU.Call_For_Waiting_Planes() > 0;
     }
 
     public void Display_Option() {

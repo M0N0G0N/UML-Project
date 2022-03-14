@@ -54,7 +54,7 @@ public class Main {
                         System.out.println("  Request Menu");
                     }                    
                     System.out.println("  Waiting Planes Menu");
-                    if (requests_menu.Can_Be_Displayed()==false ) {
+                    if (!requests_menu.Can_Be_Displayed()) {
                         System.out.println("  Advance to the next hour");
                     }
                     System.out.print("Go to  : " ) ; 
@@ -62,14 +62,10 @@ public class Main {
                     choice = choice.toUpperCase() ; 
                     
                     // !!!!!!!! securité : supprimer les espaces devant et derrriere 
-                    if(choice =="REQUEST MENU"){
-                        menu = 4 ; 
-                    }
-                    else if(choice =="WAITING PLANES"){
-                        menu = 3 ; 
-                    }
-                    else if (choice == "ADVANCE HOUR"){
-                        menu = 5 ; 
+                    switch (choice) {
+                        case "REQUEST MENU" -> menu = 4;
+                        case "WAITING PLANES" -> menu = 3;
+                        case "ADVANCE HOUR" -> menu = 5;
                     }
 
                     break;
@@ -92,7 +88,7 @@ public class Main {
                     waiting_Planes_menu.display_Waiting_menu();
                     
                     System.out.println("What do you want ? ") ;                    
-                    if(runway_Menu.Call_For_Available(true, 1).size() != 0){
+                    if(RUNWAY_MENU.Call_For_Available(true, 1).size() != 0){
                         System.out.println("  Select a plane to land") ; 
                     };
                     System.out.println("  Return to main menu ") ; 
@@ -102,10 +98,10 @@ public class Main {
                     choice = choice.toUpperCase() ; 
                     
                     // !!!!!!!! securité : supprimer les espaces devant et derrriere 
-                    if(choice =="SELECT A PLANE TO LAND"){
+                    if(Objects.equals(choice, "SELECT A PLANE TO LAND")){
                         //code here 
                     }
-                    else if(choice =="RETURN TO MAIN MENU"){
+                    else if(Objects.equals(choice, "RETURN TO MAIN MENU")){
                         menu = 1 ;  
                     }
 
@@ -123,7 +119,7 @@ public class Main {
             
             }
 
-        }while (exit == false) ; 
+        }while (!exit) ;
 
 
 
