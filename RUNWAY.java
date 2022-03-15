@@ -4,13 +4,11 @@ import java.util.* ;
 
 public class RUNWAY {
     int Runway_Number;
-    static PLANE Name_Of_Occupant;
+    static String Name_Of_Occupant;
     static int Occupied_Time_Remaining;
 
-    public RUNWAY(int runway_Number, PLANE name_Of_Occupant, int occupied_Time_Remaining) {
+    public RUNWAY(int runway_Number) {
         Runway_Number = runway_Number;
-        Name_Of_Occupant = name_Of_Occupant;
-        Occupied_Time_Remaining = occupied_Time_Remaining;
     }
 
     public void Add_Occupied_Time(int Time) { //Adds or subtracts time to Occupied_Time_Remaining, then calls Is_Free in case the time is up.

@@ -10,7 +10,7 @@ public class WAITING_PLANES_MENU extends MENU{
 
     }
 
-    public static void Create_Plane(PLANE NEW_PLANE) {
+    public static void Add_Plane(PLANE NEW_PLANE) {
         Planes.add(NEW_PLANE);
     }
 
@@ -32,7 +32,7 @@ public class WAITING_PLANES_MENU extends MENU{
 
     //FIXME: unnecessary function?
     public boolean Can_Plane_Land() { //Return False if -1 is returned.
-        return RUNWAY_MENU.Call_For_Available(true, 1).size() != 0;
+        return RUNWAY_MENU.Call_For_Available(true, 1).size() != 0;  //TODO : Use "there_is_free_runway" functions
     }
 
     public void Pass_To_Runway(String name) {
