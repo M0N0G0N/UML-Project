@@ -2,7 +2,7 @@ package com.company;
 
 public class REQUESTS_MENU extends MENU {
     REQUEST[] Request_List;
-    REQUEST[] Chose_Request;
+    REQUEST[] Chosen_Request;
 
     public REQUESTS_MENU(){
         REQUEST[] Request_LIst ;

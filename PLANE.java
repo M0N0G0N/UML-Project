@@ -1,5 +1,7 @@
 package com.company;
 
+//DON'T KILL PASSENGERS !!!
+
 public class PLANE {
     String name;
     int Total_Passengers;

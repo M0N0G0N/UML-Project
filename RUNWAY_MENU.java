@@ -15,7 +15,8 @@ public class RUNWAY_MENU extends MENU{
 
     }
 
-    public void Add_Runway() {
+    // A SUPPRIMER  : on ne peut pas ajouter ou supprimer de runway 
+   /* public void Add_Runway() {
         Runways.add(new RUNWAY(Runways.size(), null, 0)); //Adds a runway at the end of the list
     }
 
@@ -24,7 +25,7 @@ public class RUNWAY_MENU extends MENU{
         for (int i = To_Delete; i < Runways.size(); i++) {
             Runways.get(i).setRunway_Number(i); //Changes the number of each runway so there's no hole
         }
-    }
+    }*/ 
 
     public static List<Integer> Call_For_Available(boolean Free, int Number_Of_Runways) { //If free is true, then we look to see if there's Number_Of_Runways runways that's freed of any plane. If false, then we look to see for the first runways that's occupied.
         List<Integer> All_Runways = new ArrayList<>();
@@ -41,6 +42,10 @@ public class RUNWAY_MENU extends MENU{
             }
         }
         return All_Runways; //If nothing was found then we return an empty list.
+    }
+
+    public boolean there_is_free_runway(){
+
     }
 
     public static void Advance_hour_Runway() {
