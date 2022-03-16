@@ -21,6 +21,18 @@ public class ADVANCE_HOUR_MENU extends MENU{
         Current_Time++;
         RUNWAY_MENU.Advance_hour_Runway();
         WAITING_PLANES_MENU.Advance_hour_Waiting_Planes();
+        System.out.println("YOU SURVIVED HOUR " + (--Current_Time) + " !");
+        System.out.println("NOW ENTERING HOUR " + Current_Time + "...");
+        System.out.println("HERE'S WHAT HAPPENED LAST HOUR...");
+        for (String Events : Past_Hour_Events) {
+            System.out.println(Events);
+        }
+        REQUESTS_MENU.Choose_Request();
+        System.out.println("YOU HAVE NOW " + Request_Number + " NEW REQUESTS.");
+        System.out.println("THERE ARE NOW " + Passengers + " DEAD PASSENGERS. ");
+        Display_Game_Over();
+        Display_Victory();
+        System.out.println("YOU CAN DO IT!");
     }
 
     public ADVANCE_HOUR_MENU(int passengers, int current_Time, int request_Number) {
@@ -33,19 +45,15 @@ public class ADVANCE_HOUR_MENU extends MENU{
         return Request_Number == 0;
     }
 
-    public void Display_Menu() {
-        //TODO: Evenements de la dernière heure, Passage du temps, Nombre de passagers à tuer pour perdre.
-    }
-
-    public void Display_Game_Over(int Passengers) {
+    public void Display_Game_Over() {
             if (Passengers >= 350){
                 System.out.println("-----------GAME OVER ...----------\n") ;
                 System.exit(0);
         }
     }
 
-    public void Display_Victory(int current_Time) {
-        if (current_Time >= 24){  //24h
+    public void Display_Victory() {
+        if (Current_Time >= 24){
             System.out.println("-----------VICTORY !----------\n") ;
             System.exit(0);
         }

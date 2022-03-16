@@ -25,6 +25,8 @@ public class RUNWAY {
     }
 
     public void Free_Runway() { //Empties the runway
+        if (Landed_Plane != null)
+            ADVANCE_HOUR_MENU.Collect_Events("PLANE " + Landed_Plane.getName() + " LEFT. YOU SAVED " + (Landed_Plane.Total_Passengers - Landed_Plane.Dead_Passengers) + " PASSENGERS, AND RUNWAY " + Runway_Number + " IS NOW FREE!");
         Landed_Plane = null;
         Occupied_Time_Remaining = 0;
     }
@@ -45,4 +47,6 @@ public class RUNWAY {
     public int getOccupied_Time_Remaining() {
         return Occupied_Time_Remaining;
     }
+
+
 }
