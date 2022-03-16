@@ -15,21 +15,35 @@ public class REQUEST {
         Requests_Options = requests_Options;
     }
 
-    public void Choose_Option(int Option) {
-        
+    public int getRarity() {
+        return Rarity;
+    }
 
+    public String getTitle() {
+        return Title;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public OPTION[] getRequests_Options() {
+        return Requests_Options;
+    }
+
+    public void Choose_Option(int Option) {
 
     }
 
 
     public String toString() {
-        String list ="" ; 
+        StringBuilder list = new StringBuilder();
         for (int i = 0 ; i <Requests_Options.length ; i ++){
             
-            list = list + Integer.toString(i) + ")" + Requests_Options[i].toString() ; 
+            list.append(Integer.toString(i)).append(")").append(Requests_Options[i].toString());
         }
         return "\n---------REQUEST---------  \n"
-                + "   Rarety = " + Rarity +
+                + "   Rarity = " + Rarity +
                 "\n   Title = " + Title +
                 "\n   Description = " + Description + "\n\n" + 
                 list ; 

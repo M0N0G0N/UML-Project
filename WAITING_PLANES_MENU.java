@@ -47,7 +47,7 @@ public class WAITING_PLANES_MENU extends MENU{
         ADVANCE_HOUR_MENU.Collect_Events("PLANE " + Plane.name + " HAS LANDED ON A RUNWAY");
     }
 
-    public void display_Waiting_menu() {//TODO: rajouter nombre de passagers total, nombre de passagers morts, Runway time
+    public static void display_Waiting_menu() {//TODO: rajouter nombre de passagers total, nombre de passagers morts, Runway time
         System.out.println("----------Waiting planes--------");
         System.out.println("Plane name      | Fuel left         ");
         for (PLANE plane : Planes) {

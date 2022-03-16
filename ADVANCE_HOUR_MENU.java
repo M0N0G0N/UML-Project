@@ -28,6 +28,7 @@ public class ADVANCE_HOUR_MENU extends MENU{
             System.out.println(Events);
         }
         REQUESTS_MENU.Choose_Request();
+        Request_Number = REQUESTS_MENU.Request_List.size();
         System.out.println("YOU HAVE NOW " + Request_Number + " NEW REQUESTS.");
         System.out.println("THERE ARE NOW " + Passengers + " DEAD PASSENGERS. ");
         Display_Game_Over();

@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.ArrayList;
 
-//FAIRE DES SOUS CLASSES 
+//FAIRE DES SOUS CLASSES
 
 public class OPTION {
     String Option_Desc;
@@ -19,10 +19,6 @@ public class OPTION {
         return true;
     }
 
-    public boolean IsValid(int runway_number, boolean Is_Empty) {   // Option valid if there are runway_number number of runways either empty or full [Is_Empty == True -> Empty Runways]
-        return RUNWAY_MENU.Call_For_Available(Is_Empty, runway_number).size() >= runway_number;
-    }
-
     public boolean IsValid(int Plane_Number) {
         return WAITING_PLANES_MENU.Call_For_Waiting_Planes() > 0;
     }
@@ -31,15 +27,13 @@ public class OPTION {
 
     }
 
-    public void Consequence() {
 
-    }
 
     public String toString() {
         return "\nOPTION \n"
-                + "   Description = " + Option_Desc+
+                + "   Description = " + Option_Desc +
                 "\n   Requirement = " + Requirement +
-                "\n   Consequence = " + Consequences + 
+                "\n   Consequence = " + Consequences +
                 "\n" ;  
     }
 
