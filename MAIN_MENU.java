@@ -14,7 +14,8 @@ public class MAIN_MENU {
     }
 
     public static void Display_Info() {
-
+        System.out.println("NUMBER OF DEAD PASSENGERS: " + ADVANCE_HOUR_MENU.Passengers + "\n");
+        System.out.println("HOURS ELAPSED: " + ADVANCE_HOUR_MENU.Current_Time + "\n");
     }
 
     public void Advance_Hour() {

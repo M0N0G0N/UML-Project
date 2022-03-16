@@ -11,6 +11,7 @@ public class Main {
 
         //---------TEST REQUEST ----------------
 
+        /*
         OPTION option1 = new OPTION("Allow landing", "1 empty runway", "Plane lands and occupies the runway for stated time");
         OPTION option2 = new OPTION("Place on standby", "None", "Airplane joins “waiting” planes.");
         OPTION[] requests_Options = {option1, option2};
@@ -24,12 +25,27 @@ public class Main {
 
         System.out.println("Option chosen : " + requests_Options[option]);
         // ---------------------------------------
+        */
 
-
+        Scanner input = new Scanner(System.in);
         RUNWAY_MENU runway_Menu = new RUNWAY_MENU(8);
         WAITING_PLANES_MENU waiting_Planes_menu = new WAITING_PLANES_MENU();
         ADVANCE_HOUR_MENU advance_Hour = new ADVANCE_HOUR_MENU();
         REQUESTS_MENU requests_menu = new REQUESTS_MENU();
+
+        /* DUMMY PLANES
+        PLANE plane = new PLANE("STANDARD");
+        WAITING_PLANES_MENU.Add_Plane(plane);
+        WAITING_PLANES_MENU.Pass_To_Runway(plane);
+
+        PLANE plane1 = new PLANE("JUMBO");
+        WAITING_PLANES_MENU.Add_Plane(plane1);
+        WAITING_PLANES_MENU.Pass_To_Runway(plane1);
+
+        PLANE plane2 = new PLANE("EMERGENCY");
+        WAITING_PLANES_MENU.Add_Plane(plane2);
+        WAITING_PLANES_MENU.Pass_To_Runway(plane2);
+        */
 
         MAIN_MENU main_Menu = new MAIN_MENU(runway_Menu, waiting_Planes_menu, advance_Hour, requests_menu);
         String menu = "MAIN MENU";
@@ -44,7 +60,7 @@ public class Main {
                 5) ADVANCE HOUR MENU
             */
             switch (menu) {
-                case "MAIN MENU":
+                case "MAIN MENU" -> {
                     System.out.println("-----------MAIN MENU----------\n");
                     MAIN_MENU.Display_Info();
                     System.out.println("-----------Menu Options----------\n");
@@ -57,15 +73,15 @@ public class Main {
                     System.out.println("  Runway Menu: input \"RUNWAY MENU\"");
                     System.out.println("  Exit: input \"Exit\"");
                     System.out.print("INPUT : ");
-                    menu = input.next();
+                    menu = input.nextLine();
                     menu = menu.toUpperCase();
-                    break;
-                case "RUNWAY MENU":
+                }
+                case "RUNWAY MENU" -> {
                     System.out.println("-----------RUNWAY MENU----------\n");
                     RUNWAY_MENU.Display_Index();
                     menu = "MAIN MENU";
-                    break;
-                case "REQUEST MENU":
+                }
+                case "REQUEST MENU" -> {
                     if (!requests_menu.Can_Be_Displayed()) {
                         System.out.println("ERROR: UNABLE TO PROCEED WITH COMMAND");
                     } else {
@@ -73,13 +89,13 @@ public class Main {
                         REQUESTS_MENU.Display_requests_menu();
                     }
                     menu = "MAIN MENU";
-                    break;
-                case "WAITING PLANES":
+                }
+                case "WAITING PLANES" -> {
                     System.out.println("-----------WAITING PLANES MENU----------\n");
                     WAITING_PLANES_MENU.Display_Waiting_Planes_Menu();
                     menu = "MAIN MENU";
-                    break;
-                case "ADVANCE HOUR":
+                }
+                case "ADVANCE HOUR" -> {
                     if (!ADVANCE_HOUR_MENU.Can_Be_Displayed()) {
                         System.out.println("ERROR: UNABLE TO PROCEED WITH COMMAND");
                     } else {
@@ -87,15 +103,15 @@ public class Main {
                         ADVANCE_HOUR_MENU.Display_Advance_Hour_Menu();
                     }
                     menu = "MAIN MENU";
-                    break;
-                case "EXIT":
+                }
+                case "EXIT" -> {
                     exit = true;
                     menu = "MAIN MENU";
-                    break;
-                default:
-                    System.out.print("ERROR: COMMAND NOT RECOGNIZED");
+                }
+                default -> {
+                    System.out.println("ERROR: COMMAND NOT RECOGNIZED");
                     menu = "MAIN MENU";
-                    break;
+                }
             }
                     /*
                     ● Shows an index tabled, each row contains the following:

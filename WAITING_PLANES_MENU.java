@@ -35,15 +35,20 @@ public class WAITING_PLANES_MENU extends MENU{
         return RUNWAY_MENU.Call_For_Available(true, 1).size() != 0;  //TODO : Use "there_is_free_runway" functions
     }
 
-    public void Pass_To_Runway(String name) {
+    public static void Pass_To_Runway(String name) {
         for (PLANE plane : Planes) {
-            if (Objects.equals(name, plane.name)) {
-                RUNWAY.Receive_Plane(plane);
-                Planes.remove(plane);
-                ADVANCE_HOUR_MENU.Collect_Events("PLANE " + plane.name + " HAS LANDED ON A RUNWAY");
+            if (Objects.equals(name, plane.getName())) {
+                Pass_To_Runway(plane);
                 return;
             }
         }
+    }
+
+    public static void Pass_To_Runway(PLANE Plane) {
+        RUNWAY_MENU.Runways.get(RUNWAY_MENU.Call_For_Available(true, 1).get(0)).Receive_Plane(Plane);
+        System.out.println("Occupied Runway: " + RUNWAY_MENU.Call_For_Available(true, 1).get(0));
+        Planes.remove(Plane);
+        ADVANCE_HOUR_MENU.Collect_Events("PLANE " + Plane.name + " HAS LANDED ON A RUNWAY");
     }
 
     public void display_Waiting_menu() {

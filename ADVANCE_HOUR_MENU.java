@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ADVANCE_HOUR_MENU extends MENU{
     static int Passengers;
-    int Current_Time;
+    static int Current_Time;
     static List<String> Past_Hour_Events = new ArrayList<>();
     static int Request_Number;
 

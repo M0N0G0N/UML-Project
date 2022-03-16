@@ -45,4 +45,8 @@ public class PLANE {
             WAITING_PLANES_MENU.Remove_Plane(name);
         }
     }
+
+    public String getName() {
+        return name;
+    }
 }

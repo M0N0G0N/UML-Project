@@ -9,7 +9,7 @@ public final class PLANE_BANK { //This class is used so we can generate a name, 
     static final char[] Letters = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 
     public static String Get_Random_Name() { //A name is constructed as follows: COUNTRY + SUFFIX + LETTER + INTEGER[1;5000].
-        return Countries[ThreadLocalRandom.current().nextInt(0, Countries.length + 1)]+ " " + Suffix[ThreadLocalRandom.current().nextInt(0, Suffix.length + 1)] + " " + Letters[ThreadLocalRandom.current().nextInt(0, Letters.length + 1)] + ThreadLocalRandom.current().nextInt(1, 5000 + 1);
+        return Countries[ThreadLocalRandom.current().nextInt(0, Countries.length)]+ " " + Suffix[ThreadLocalRandom.current().nextInt(0, Suffix.length)] + " " + Letters[ThreadLocalRandom.current().nextInt(0, Letters.length)] + ThreadLocalRandom.current().nextInt(1, 5000 + 1);
     }
 
     public static int Gen_Total_Passengers(String PLANE_TYPE) { //Depending on the plane type, this method generates a number of total passengers.
