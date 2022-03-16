@@ -19,7 +19,7 @@ public class RUNWAY {
     }
 
     public void Is_Free() { //Checks if the runway has to be emptied
-        if (Occupied_Time_Remaining == 0 || Landed_Plane == null) {
+        if ((Occupied_Time_Remaining == 0 || Landed_Plane == null) && Occupied_Time_Remaining < 24) {
             Free_Runway();
         }
     }

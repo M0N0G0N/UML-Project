@@ -33,7 +33,6 @@ public class Main {
         ADVANCE_HOUR_MENU advance_Hour = new ADVANCE_HOUR_MENU();
         REQUESTS_MENU requests_menu = new REQUESTS_MENU();
 
-        /* DUMMY PLANES
         PLANE plane = new PLANE("STANDARD");
         WAITING_PLANES_MENU.Add_Plane(plane);
         WAITING_PLANES_MENU.Pass_To_Runway(plane);
@@ -45,7 +44,6 @@ public class Main {
         PLANE plane2 = new PLANE("EMERGENCY");
         WAITING_PLANES_MENU.Add_Plane(plane2);
         WAITING_PLANES_MENU.Pass_To_Runway(plane2);
-        */
 
         MAIN_MENU main_Menu = new MAIN_MENU(runway_Menu, waiting_Planes_menu, advance_Hour, requests_menu);
         String menu = "MAIN MENU";

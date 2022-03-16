@@ -34,7 +34,7 @@ public class ADVANCE_HOUR_MENU extends MENU{
     }
 
     public void Display_Menu() {
-        //TODO: Find a pretty way of displaying this menu
+        //TODO: Evenements de la dernière heure, Passage du temps, Nombre de passagers à tuer pour perdre.
     }
 
     public void Display_Game_Over(int Passengers) {
