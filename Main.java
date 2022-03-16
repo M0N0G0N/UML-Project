@@ -90,7 +90,7 @@ public class Main {
                 }
                 case "WAITING PLANES" -> {
                     System.out.println("-----------WAITING PLANES MENU----------\n");
-                    WAITING_PLANES_MENU.Display_Waiting_Planes_Menu();
+                    WAITING_PLANES_MENU.Display_Waiting_menu();
                     menu = "MAIN MENU";
                 }
                 case "ADVANCE HOUR" -> {
