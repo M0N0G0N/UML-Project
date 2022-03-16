@@ -14,10 +14,6 @@ public class WAITING_PLANES_MENU extends MENU{
         Planes.add(NEW_PLANE);
     }
 
-    public static void Display_Waiting_Planes_Menu() {
-
-    }
-
     public void Display_Index() {
     }
 
