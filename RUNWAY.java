@@ -4,31 +4,28 @@ import java.util.* ;
 
 public class RUNWAY {
     int Runway_Number;
-    static String Name_Of_Occupant;
+    static PLANE Landed_Plane;
     static int Occupied_Time_Remaining;
 
-    public RUNWAY(int runway_Number) {
+    public RUNWAY(int runway_Number, PLANE name_Of_Occupant, int occupied_Time_Remaining) {
         Runway_Number = runway_Number;
-    }
-
-    public void Add_Occupied_Time(int Time) { //Adds or subtracts time to Occupied_Time_Remaining, then calls Is_Free in case the time is up.
-        Occupied_Time_Remaining = Occupied_Time_Remaining + Time;
-        Is_Free();
+        Landed_Plane = name_Of_Occupant;
+        Occupied_Time_Remaining = occupied_Time_Remaining;
     }
 
     public void Is_Free() { //Checks if the runway has to be emptied
-        if (Occupied_Time_Remaining == 0 || Name_Of_Occupant == null) {
+        if (Occupied_Time_Remaining == 0 || Landed_Plane == null) {
             Free_Runway();
         }
     }
 
     public void Free_Runway() { //Empties the runway
-        Name_Of_Occupant = null;
+        Landed_Plane = null;
         Occupied_Time_Remaining = 0;
     }
 
     public static void Receive_Plane(PLANE Plane) { //Receives a plane to occupy the Runway.
-        Name_Of_Occupant = Plane;
+        Landed_Plane = Plane;
         Occupied_Time_Remaining = Plane.Refuel_Time;
     }
 
@@ -37,7 +34,7 @@ public class RUNWAY {
     }
 
     public PLANE getName_Of_Occupant() {
-        return Name_Of_Occupant;
+        return Landed_Plane;
     }
 
 
