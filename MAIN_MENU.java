@@ -19,7 +19,7 @@ public class MAIN_MENU {
     }
 
     public void Advance_Hour() {
-
+        //FIXME: unused function, see ADVANCE_HOUR_MENU for the right function.
     }
 
 }

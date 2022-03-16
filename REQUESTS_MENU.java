@@ -21,7 +21,7 @@ public class REQUESTS_MENU extends MENU {
         return Request_List != null && Request_List.length != 0;
     }
 
-    public void Choose_Request() {
+    public static void Choose_Request() {
 
     }
 
