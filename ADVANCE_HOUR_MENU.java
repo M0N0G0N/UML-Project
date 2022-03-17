@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ADVANCE_HOUR_MENU extends MENU{
-    static int Passengers;
-    static int Current_Time;
-    static List<String> Past_Hour_Events = new ArrayList<>();
-    static int Request_Number;
+    static int Passengers; //Dead people that the player killed by negligence and poor planning skills.
+    static int Current_Time; //Current hour.
+    static List<String> Past_Hour_Events = new ArrayList<>(); //Everything that happened in the last hour.
+    static int Request_Number; //Number of requests available.
 
     public ADVANCE_HOUR_MENU(){
         
@@ -27,6 +27,7 @@ public class ADVANCE_HOUR_MENU extends MENU{
         for (String Events : Past_Hour_Events) {
             System.out.println(Events);
         }
+        Past_Hour_Events.clear();
         REQUESTS_MENU.Choose_Request();
         Request_Number = REQUESTS_MENU.Request_List.size();
         System.out.println("YOU HAVE NOW " + Request_Number + " NEW REQUESTS.");

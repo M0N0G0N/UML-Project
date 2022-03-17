@@ -25,7 +25,7 @@ public class RUNWAY_OPTION extends OPTION{
         Lockdown = lockdown;
     }
 
-    public void Consequence() { //Simply use this when the option is chosen, the method will do the rest.
+    public void Consequences() { //Simply use this when the option is chosen, the method will do the rest.
         List<Integer> Affected_Runways = new ArrayList<>();
         Affected_Runways = RUNWAY_MENU.Call_For_Available(Needs_To_Be_Empty, Runways_Affected);
         for (Integer runway_Indexes : Affected_Runways) {

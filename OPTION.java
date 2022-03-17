@@ -15,15 +15,9 @@ public class OPTION {
         Consequences = consequences;
     }
 
-    public boolean IsValid() { //PlaceHolder until we can find something better maybe?
-        return true;
-    }
-
     public void Display_Option() {
 
     }
-
-
 
     public String toString() {
         return "\nOPTION \n"
