@@ -43,7 +43,7 @@ public class RUNWAY_MENU extends MENU{
         }
     }
 
-    public void Delete_Runway (int To_Delete) { //To_Delete is the index of the Runway we want to delete
+    public static void Delete_Runway (int To_Delete) { //To_Delete is the index of the Runway we want to delete
         Runways.get(To_Delete).Free_Runway();
         Runways.get(To_Delete).Add_Occupied_Time(72);//Removes the runway at a specific index
         ADVANCE_HOUR_MENU.Collect_Events("RUNWAY " + To_Delete + " HAS BEEN FROZEN, AND IS NOW UNUSABLE.");
@@ -52,7 +52,7 @@ public class RUNWAY_MENU extends MENU{
     public static List<Integer> Call_For_Available(boolean Free, int Number_Of_Runways) { //If free is true, then we look to see if there's Number_Of_Runways runways that's freed of any plane. If false, then we look to see for the first runways that's occupied.
         List<Integer> All_Runways = new ArrayList<>();
         for (int i = 0; i < Runways.size(); i++) {
-            if (Runways.get(i).getLandedPlane() == null && Free) { //If free is true and there's nothing here, we return the whole list
+            if (Runways.get(i).getLandedPlane() == null && Free && Runways.get(i).getOccupied_Time_Remaining() == 0) { //If free is true and there's nothing here, we return the whole list
                 All_Runways.add(i);
                 if (All_Runways.size() == Number_Of_Runways)
                     return All_Runways;
