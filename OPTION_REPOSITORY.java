@@ -38,5 +38,18 @@ public final class OPTION_REPOSITORY { //Add options here to use them in the REQ
     }
 
     public List<OPTION> Bad_Weather() {
+        List<OPTION> Bad_Weather_Options = new ArrayList<>();
+        Bad_Weather_Options.add(new NO_REQUIREMENT_OPTION("Cross winds", "None", "Remove 1 hour of fuel from all waiting planes in air", null,-1,null));
+        Bad_Weather_Options.add(new NO_REQUIREMENT_OPTION("Icy ru ways", "None", "Add 2 hours wait time to all planes waiting in runway", null, null,2));
+        Bad_Weather_Options.add(new RUNWAY_OPTION("Ice storm", "At least 1 runway", "Remove a runway",false,-1));
+        return Bad_Weather_Options;
+    }
+
+    public List<OPTION> Snakes_on_plane() {
+    List<OPTION> Snakes_on_plane_Options = new ArrayList<>();
+    PLANE Snakes_on_plane = new PLANE("SNAKES");
+        Snakes_on_plane_Options.add(new RUNWAY_OPTION("Let them land", "Free run way", "Plane will occupy runway for 7 hours", 7,1));
+        Snakes_on_plane_Options.add(new NO_REQUIREMENT_OPTION("Refuse them", "None", "Counts as letting 50 people die", -50,null,null));
+        return Snakes_on_plane_Options;
     }
 }
