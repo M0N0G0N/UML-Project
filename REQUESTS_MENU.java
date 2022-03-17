@@ -1,5 +1,6 @@
 package com.company;
 
+import java.security.cert.CRLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -8,7 +9,14 @@ public class REQUESTS_MENU extends MENU {
     static List<REQUEST> Request_List = new ArrayList<>();
     static List<REQUEST> Chosen_Request = new ArrayList<>();
 
-    public REQUESTS_MENU(){
+    public REQUESTS_MENU() {
+        Create_Requests(true);
+    }
+
+    public void Create_Requests (boolean First_Time) { //Is used to randomise and create Requests in the list
+        if (First_Time) {
+
+        }
     }
 
     public static void Display_requests_menu() {

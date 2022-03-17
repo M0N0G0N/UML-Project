@@ -4,7 +4,7 @@ import jdk.incubator.foreign.Addressable;
 
 public class NO_REQUIREMENT_OPTION extends OPTION{
     PLANE Plane; //The plane that will wait in the air if chosen.
-    Integer Save_And_Kill_People; //Leave null if unused. Will kill or save people (negative: kill, positive: save).
+    Integer Save_And_Kill_People; //Leave null if unused. Will kill or save people (negative: save, positive: kill).
     Integer Add_Fuel; //Leave null if unused. Will remove or add fuel to planes (negative: remove fuel, positive: add fuel)
     Integer Add_Wait_Time; //Leave null if unused. Will add wait time to planes on runways (negative: remove wait time, positive: add wait time)
 

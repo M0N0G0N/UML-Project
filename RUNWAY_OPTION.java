@@ -10,19 +10,22 @@ public class RUNWAY_OPTION extends OPTION{
     boolean Empty_Runway; //If true, then it empties a random runway. Else, it will bar a runway from being available again.
     Integer Lockdown = null; //If Specified, then it will add the specified number of hours the runway will be unusable.
 
-    public RUNWAY_OPTION(String option_Desc, String requirement, String consequences, PLANE affected_Plane) { //Use this constructor when you want to land a plane.
+    public RUNWAY_OPTION(String option_Desc, String requirement, String consequences, PLANE affected_Plane, int runways_Affected) { //Use this constructor when you want to land a plane.
         super(option_Desc, requirement, consequences);
         Affected_Plane = affected_Plane;
+        Runways_Affected = runways_Affected;
     }
 
-    public RUNWAY_OPTION(String option_Desc, String requirement, String consequences, boolean empty_Runway) { //Use this constructor when you want to free or occupy a random Runway as an event.
+    public RUNWAY_OPTION(String option_Desc, String requirement, String consequences, boolean empty_Runway, int runways_Affected) { //Use this constructor when you want to free or occupy a random Runway as an event.
         super(option_Desc, requirement, consequences);
         Empty_Runway = empty_Runway;
+        Runways_Affected = runways_Affected;
     }
 
-    public RUNWAY_OPTION(String option_Desc, String requirement, String consequences, int lockdown) { //Use this constructor when you want to free or occupy a random Runway as an event.
+    public RUNWAY_OPTION(String option_Desc, String requirement, String consequences, int lockdown, int runways_Affected) { //Use this constructor when you want to free or occupy a random Runway as an event.
         super(option_Desc, requirement, consequences);
         Lockdown = lockdown;
+        Runways_Affected = runways_Affected;
     }
 
     public void Consequences() { //Simply use this when the option is chosen, the method will do the rest.

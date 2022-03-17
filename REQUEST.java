@@ -1,14 +1,14 @@
 package com.company;
-import java.util.* ; 
-import java.lang.* ; 
+import java.lang.* ;
+import java.util.List;
 
 public class REQUEST {
     int Rarity;
     String Title;
     String Description;
-    OPTION[] Requests_Options;
+    List<OPTION> Requests_Options;
 
-    public REQUEST(int rarity, String title, String description, OPTION[] requests_Options) {
+    public REQUEST(int rarity, String title, String description, List<OPTION> requests_Options) {
         Rarity = rarity;
         Title = title;
         Description = description;
@@ -27,7 +27,7 @@ public class REQUEST {
         return Description;
     }
 
-    public OPTION[] getRequests_Options() {
+    public List<OPTION> getRequests_Options() {
         return Requests_Options;
     }
 
@@ -38,9 +38,9 @@ public class REQUEST {
 
     public String toString() {
         StringBuilder list = new StringBuilder();
-        for (int i = 0 ; i <Requests_Options.length ; i ++){
+        for (int i = 0; i < Requests_Options.size(); i ++){
             
-            list.append(Integer.toString(i)).append(")").append(Requests_Options[i].toString());
+            list.append(Integer.toString(i)).append(")").append(Requests_Options.get(i).toString());
         }
         return "\n---------REQUEST---------  \n"
                 + "   Rarity = " + Rarity +
