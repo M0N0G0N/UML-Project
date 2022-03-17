@@ -57,7 +57,7 @@ public class RUNWAY_MENU extends MENU{
                 if (All_Runways.size() == Number_Of_Runways)
                     return All_Runways;
             }
-            else if (Runways.get(i).getLandedPlane() != null && !Free) { //If free is false and there's a plane here, we return whole list
+            else if ((Runways.get(i).getLandedPlane() != null || Runways.get(i).getOccupied_Time_Remaining() != 0)  && !Free) { //If free is false and there's a plane here, we return whole list
                 All_Runways.add(i);
                 if (All_Runways.size() == Number_Of_Runways)
                     return All_Runways;

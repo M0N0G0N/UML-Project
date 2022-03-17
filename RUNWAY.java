@@ -19,14 +19,15 @@ public class RUNWAY {
     }
 
     public void Is_Free() { //Checks if the runway has to be emptied
-        if ((Occupied_Time_Remaining == 0 || Landed_Plane == null) && Occupied_Time_Remaining < 24) {
+        if (Occupied_Time_Remaining == 0) {
             Free_Runway();
         }
     }
 
     public void Free_Runway() { //Empties the runway
         if (Landed_Plane != null)
-            ADVANCE_HOUR_MENU.Collect_Events("PLANE " + Landed_Plane.getName() + " LEFT. YOU SAVED " + (Landed_Plane.Total_Passengers - Landed_Plane.Dead_Passengers) + " PASSENGERS, AND RUNWAY " + Runway_Number + " IS NOW FREE!");
+            ADVANCE_HOUR_MENU.Collect_Events("PLANE " + Landed_Plane.getName() + " LEFT. YOU SAVED " + (Landed_Plane.Total_Passengers - Landed_Plane.Dead_Passengers) + " PASSENGERS.");
+        ADVANCE_HOUR_MENU.Collect_Events("RUNWAY " + Runway_Number + " IS NOW FREE!");
         Landed_Plane = null;
         Occupied_Time_Remaining = 0;
     }

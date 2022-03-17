@@ -19,10 +19,6 @@ public class OPTION {
         return true;
     }
 
-    public boolean IsValid(int Plane_Number) {
-        return WAITING_PLANES_MENU.Call_For_Waiting_Planes() > 0;
-    }
-
     public void Display_Option() {
 
     }
