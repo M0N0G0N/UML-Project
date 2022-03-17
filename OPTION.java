@@ -1,5 +1,9 @@
 package com.company;
 
+import java.util.ArrayList;
+
+//FAIRE DES SOUS CLASSES
+
 public class OPTION {
     String Option_Desc;
     String Requirement;
@@ -11,23 +15,27 @@ public class OPTION {
         Consequences = consequences;
     }
 
-    public boolean IsValid() {
-
+    public boolean IsValid() { //PlaceHolder until we can find something better maybe?
+        return true;
     }
 
-    public boolean IsValid(RUNWAY runway) {
-
-    }
-
-    public boolean IsValid(PLANE Planes) {
-
+    public boolean IsValid(int Plane_Number) {
+        return WAITING_PLANES_MENU.Call_For_Waiting_Planes() > 0;
     }
 
     public void Display_Option() {
 
     }
 
-    public void Consequence() {
 
+
+    public String toString() {
+        return "\nOPTION \n"
+                + "   Description = " + Option_Desc +
+                "\n   Requirement = " + Requirement +
+                "\n   Consequence = " + Consequences +
+                "\n" ;  
     }
+
+
 }
