@@ -5,7 +5,7 @@ import java.util.List;
 
 public final class OPTION_REPOSITORY { //Add options here to use them in the REQUESTS_MENU
 
-    public List<OPTION> Standard_Plane() {
+    public static List<OPTION> Standard_Plane() {
         List<OPTION> Standard_Plane_Options = new ArrayList<>();
         PLANE Standard_Plane = new PLANE("STANDARD");
         Standard_Plane_Options.add(new RUNWAY_OPTION("Allow Landing", "1 Empty Runway", "Plane lands and occupies Runway for stated time", Standard_Plane, 1));
@@ -13,7 +13,7 @@ public final class OPTION_REPOSITORY { //Add options here to use them in the REQ
         return Standard_Plane_Options;
     }
 
-    public List<OPTION> Jumbo_Plane() {
+    public static List<OPTION> Jumbo_Plane() {
         List<OPTION> Jumbo_Plane_Options = new ArrayList<>();
         PLANE Jumbo_Plane = new PLANE("JUMBO");
         Jumbo_Plane_Options.add(new RUNWAY_OPTION("Allow Landing", "1 Empty Runway", "Plane lands and occupies Runway for stated time", Jumbo_Plane, 1));
@@ -21,7 +21,7 @@ public final class OPTION_REPOSITORY { //Add options here to use them in the REQ
         return Jumbo_Plane_Options;
     }
 
-    public List<OPTION> Emergency_Landing() {
+    public static List<OPTION> Emergency_Landing() {
         List<OPTION> Emergency_Plane_Options = new ArrayList<>();
         PLANE Emergency_Plane = new PLANE("EMERGENCY");
         Emergency_Plane_Options.add(new RUNWAY_OPTION("Allow Landing", "1 Empty Runway", "Plane lands and occupies Runway for stated time", Emergency_Plane, 1));
@@ -29,7 +29,7 @@ public final class OPTION_REPOSITORY { //Add options here to use them in the REQ
         return Emergency_Plane_Options;
     }
 
-    public List<OPTION> Funding_Event() {
+    public static List<OPTION> Funding_Event() {
         List<OPTION> Funding_Event_Options = new ArrayList<>();
         Funding_Event_Options.add(new RUNWAY_OPTION("Empty Random Runway", "1 full runway", "Empties a random runway", true, 1));
         Funding_Event_Options.add(new NO_REQUIREMENT_OPTION("Rescue Team", "None", "Rescue 100 people", -100, null, null));

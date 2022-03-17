@@ -16,6 +16,9 @@ public final class PLANE_BANK { //This class is used so we can generate a name, 
         if (Objects.equals(PLANE_TYPE, "JUMBO")) {
             return ThreadLocalRandom.current().nextInt(300, 600);
         }
+        else if (Objects.equals(PLANE_TYPE, "SNAKES")){
+            return 50;
+        }
         else {
             return ThreadLocalRandom.current().nextInt(100, 500);
         }
@@ -25,8 +28,11 @@ public final class PLANE_BANK { //This class is used so we can generate a name, 
         if (Objects.equals(PLANE_TYPE, "JUMBO")) {
             return ThreadLocalRandom.current().nextInt(4, 6 + 1);
         }
-        else if (Objects.equals(PLANE_TYPE, "EMERGENCY")){
-            return ThreadLocalRandom.current().nextInt( 1, 3+ 1);
+        else if (Objects.equals(PLANE_TYPE, "EMERGENCY")) {
+            return ThreadLocalRandom.current().nextInt(1, 3 + 1);
+        }
+        else if (Objects.equals(PLANE_TYPE, "SNAKES")) {
+            return 0;
         }
         else {
             return ThreadLocalRandom.current().nextInt( 3, 5 + 1);
@@ -39,6 +45,9 @@ public final class PLANE_BANK { //This class is used so we can generate a name, 
         }
         else if (Objects.equals(PLANE_TYPE, "EMERGENCY")) {
             return ThreadLocalRandom.current().nextInt( 3, 5 + 1);
+        }
+        else if (Objects.equals(PLANE_TYPE, "SNAKES")) {
+            return 8;
         }
         else {
             return ThreadLocalRandom.current().nextInt( 1, 4 + 1);
