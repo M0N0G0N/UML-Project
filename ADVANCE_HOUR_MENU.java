@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ADVANCE_HOUR_MENU extends MENU{
     static int Passengers = 0; //Dead people that the player killed by negligence and poor planning skills.
-    static int Current_Time = 0; //Current hour.
+    static int Current_Time = 1; //Current hour.
     static List<String> Past_Hour_Events = new ArrayList<>(); //Everything that happened in the last hour.
     static int Request_Number; //Number of requests available.
 
@@ -15,14 +15,13 @@ public class ADVANCE_HOUR_MENU extends MENU{
     }
 
     public static void Display_Advance_Hour_Menu() {
-
     }
 
-    public void Advance_Hour() {
+    public static void Advance_Hour() {
         Current_Time++;
         RUNWAY_MENU.Advance_hour_Runway();
         WAITING_PLANES_MENU.Advance_hour_Waiting_Planes();
-        System.out.println("YOU SURVIVED HOUR " + (--Current_Time) + " !");
+        System.out.println("YOU SURVIVED HOUR " + (Current_Time - 1) + " !");
         System.out.println("NOW ENTERING HOUR " + Current_Time + "...");
         System.out.println("HERE'S WHAT HAPPENED LAST HOUR...");
         for (String Events : Past_Hour_Events) {
@@ -49,14 +48,14 @@ public class ADVANCE_HOUR_MENU extends MENU{
         return Request_Number == 0;
     }
 
-    public void Display_Game_Over() {
+    public static void Display_Game_Over() {
             if (Passengers >= 350){
                 System.out.println("-----------GAME OVER ...----------\n") ;
                 System.exit(0);
         }
     }
 
-    public void Display_Victory() {
+    public static void Display_Victory() {
         if (Current_Time >= 24){
             System.out.println("-----------VICTORY !----------\n") ;
             System.exit(0);

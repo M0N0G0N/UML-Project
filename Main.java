@@ -86,6 +86,7 @@ public class Main {
                     } else {
                         System.out.println("-----------ADVANCE HOUR MENU-----------\n");
                         ADVANCE_HOUR_MENU.Display_Advance_Hour_Menu();
+                        ADVANCE_HOUR_MENU.Advance_Hour();
                     }
                     menu = "MAIN MENU";
                 }

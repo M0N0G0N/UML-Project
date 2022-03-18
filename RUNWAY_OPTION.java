@@ -56,8 +56,6 @@ public class RUNWAY_OPTION extends OPTION{
     }
 
     public boolean IsValid() {   // Option valid if there are runway_number number of runways either empty or full [Is_Empty == True -> Empty Runways]
-        System.out.println("The fucking thing is" + Needs_To_Be_Empty);
-        System.out.println("There are : " + RUNWAY_MENU.Call_For_Available(Needs_To_Be_Empty, Runways_Affected).size() + " EMPTY RUNWAYS\nWE ARE RETURNING " + (RUNWAY_MENU.Call_For_Available(Needs_To_Be_Empty, Runways_Affected).size() >= Runways_Affected));
         return RUNWAY_MENU.Call_For_Available(Needs_To_Be_Empty, Runways_Affected).size() >= Runways_Affected;
     }
 }

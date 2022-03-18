@@ -56,10 +56,7 @@ public class RUNWAY_MENU extends MENU{
     public static List<Integer> Call_For_Available(boolean Free, int Number_Of_Runways) { //If free is true, then we look to see if there's Number_Of_Runways runways that's freed of any plane. If false, then we look to see for the first runways that's occupied.
         List<Integer> All_Runways = new ArrayList<>();
         for (int i = 0; i < Runways.size(); i++) {
-            System.out.println("For this runway: plane is " + Runways.get(i).getLandedPlane() + " and the occupied time is " + Runways.get(i).getOccupied_Time_Remaining());
-            System.out.println((Runways.get(i).getLandedPlane() == null) + " " + (Runways.get(i).getOccupied_Time_Remaining() == 0) + " " + (Free));
             if ((Runways.get(i).getLandedPlane() == null && Runways.get(i).getOccupied_Time_Remaining() == 0) && Free) { //If free is true and there's nothing here, we return the whole list
-                System.out.println("So we add this plane here.");
                 All_Runways.add(i);
                 if (All_Runways.size() == Number_Of_Runways)
                     return All_Runways;
