@@ -53,8 +53,24 @@ public final class OPTION_REPOSITORY { //Add options here to use them in the REQ
         return Snakes_on_plane_Options;
     }
 
-    public static List<OPTION> John_Mcclain() {
-        List<OPTION> John_Mcclain_Options = new ArrayList<>();
-        return John_Mcclain_Options;
+    public List<OPTION> Protests() {
+        List<OPTION> Protests_Options = new ArrayList<>();
+        PLANE Protest_Plane = new PLANE("PROTEST");
+        Protests_Options.add(new RUNWAY_OPTION("Allow them the space to protest", "free runway", "one runway will be blocked for 10 hours", 10, 1));
+        Protests_Options.add(new RUNWAY_OPTION("Get police involved", "2 free runways", "Two runways will be blocked for 4 hours", 4, 2));
+        Protests_Options.add(new NO_REQUIREMENT_OPTION("Let the planes lands anyways", "None", "Count as 100 passengers dying", 100, null,null));
+        return Protests_Options;
     }
+
+    public List<OPTION> John_Mcclain() {
+        List<OPTION> Join_mcclain_Options = new ArrayList<>();
+        PLANE Protest_Plane = new PLANE("PROTEST");
+        Join_mcclain_Options.add(new RUNWAY_OPTION("Lockdown the runway", "free runway", "one runway will be blocked for 8 hours", 8, 1));
+        Join_mcclain_Options.add(new NO_REQUIREMENT_OPTION("Let the man go", "None", "He crashes the plane into another random Waiting planes and saves christmas. Remove the waiting plane (no cost) and kill 100 passengers", 100));
+        return Join_mcclain_Options;
+    }
+
+
+
+
 }

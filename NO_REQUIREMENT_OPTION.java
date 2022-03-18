@@ -2,11 +2,14 @@ package com.company;
 
 import jdk.incubator.foreign.Addressable;
 
+import java.util.Random;
+
 public class NO_REQUIREMENT_OPTION extends OPTION{
     PLANE Plane; //The plane that will wait in the air if chosen.
     Integer Save_And_Kill_People; //Leave null if unused. Will kill or save people (negative: save, positive: kill).
     Integer Add_Fuel; //Leave null if unused. Will remove or add fuel to planes (negative: remove fuel, positive: add fuel)
     Integer Add_Wait_Time; //Leave null if unused. Will add wait time to planes on runways (negative: remove wait time, positive: add wait time)
+    boolean Waiting_plane = false; //If true, checks if there are any waiting planes in the air. Remove an random waiting plane
 
 
     public NO_REQUIREMENT_OPTION(String option_Desc, String requirement, String consequences, PLANE plane) {
@@ -19,6 +22,12 @@ public class NO_REQUIREMENT_OPTION extends OPTION{
         Save_And_Kill_People = save_And_Kill_People;
         Add_Fuel = add_Fuel;
         Add_Wait_Time = add_Wait_Time;
+    }
+
+    public NO_REQUIREMENT_OPTION(String option_Desc, String requirement, String consequences, Integer save_And_Kill_People) {
+        super (option_Desc, requirement, consequences);
+        Save_And_Kill_People = save_And_Kill_People;
+        Waiting_plane = true ;
     }
 
     public boolean Consequences() {
@@ -38,6 +47,13 @@ public class NO_REQUIREMENT_OPTION extends OPTION{
             for (RUNWAY runways : RUNWAY_MENU.Runways) {
                 runways.Add_Occupied_Time(Add_Wait_Time); //We mess with their fuel ÒwÓ
             }
+        }
+        if (Waiting_plane){
+           if (WAITING_PLANES_MENU.Call_For_Waiting_Planes()>0){
+                Random random = new Random();
+                int rd = random.nextInt(WAITING_PLANES_MENU.Call_For_Waiting_Planes()) ;
+                WAITING_PLANES_MENU.Planes.remove(rd); 
+           }
         }
         return false;
     }
