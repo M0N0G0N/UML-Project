@@ -37,7 +37,7 @@ public final class OPTION_REPOSITORY { //Add options here to use them in the REQ
         return Funding_Event_Options;
     }
 
-    public List<OPTION> Bad_Weather() {
+    public static List<OPTION> Bad_Weather() {
         List<OPTION> Bad_Weather_Options = new ArrayList<>();
         Bad_Weather_Options.add(new NO_REQUIREMENT_OPTION("Cross winds", "None", "Remove 1 hour of fuel from all waiting planes in air", null,-1,null));
         Bad_Weather_Options.add(new NO_REQUIREMENT_OPTION("Icy runways", "None", "Add 2 hours wait time to all planes waiting in runway", null, null,2));
@@ -45,7 +45,7 @@ public final class OPTION_REPOSITORY { //Add options here to use them in the REQ
         return Bad_Weather_Options;
     }
 
-    public List<OPTION> Snakes_on_plane() {
+    public static List<OPTION> Snakes_on_plane() {
     List<OPTION> Snakes_on_plane_Options = new ArrayList<>();
     PLANE Snakes_on_plane = new PLANE("SNAKES");
         Snakes_on_plane_Options.add(new RUNWAY_OPTION("Let them land", "Free run way", "Plane will occupy runway for 7 hours", 7,1));
@@ -53,7 +53,8 @@ public final class OPTION_REPOSITORY { //Add options here to use them in the REQ
         return Snakes_on_plane_Options;
     }
 
-    public List<OPTION> Protests() {
+
+    public static List<OPTION> Protests() {
         List<OPTION> Protests_Options = new ArrayList<>();
         PLANE Protest_Plane = new PLANE("PROTEST");
         Protests_Options.add(new RUNWAY_OPTION("Allow them the space to protest", "free runway", "one runway will be blocked for 10 hours", 10, 1));
@@ -62,7 +63,7 @@ public final class OPTION_REPOSITORY { //Add options here to use them in the REQ
         return Protests_Options;
     }
 
-    public List<OPTION> John_Mcclain() {
+    public static List<OPTION> John_Mcclain() {
         List<OPTION> Join_mcclain_Options = new ArrayList<>();
         PLANE Protest_Plane = new PLANE("PROTEST");
         Join_mcclain_Options.add(new RUNWAY_OPTION("Lockdown the runway", "free runway", "one runway will be blocked for 8 hours", 8, 1));
@@ -70,7 +71,7 @@ public final class OPTION_REPOSITORY { //Add options here to use them in the REQ
         return Join_mcclain_Options;
     }
 
-
+    
 
 
 }
