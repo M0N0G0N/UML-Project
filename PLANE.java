@@ -2,6 +2,8 @@ package com.company;
 
 //DON'T KILL PASSENGERS !!!
 
+import java.util.Objects;
+
 public class PLANE {
     String name;
     int Total_Passengers;
