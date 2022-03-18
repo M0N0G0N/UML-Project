@@ -34,7 +34,7 @@ public class REQUESTS_MENU extends MENU {
         Request_List.remove(5); //Removes the Jumbo Jet option so it is randomized again
         Request_List.remove(6); //Removes the Emergency plane so it is randomized again
         Request_List.remove(7); //Removes the Standard plane so it is randomized again
-        Request_List.add(new REQUEST((10, "SNAKES ON PLANE", "A pilot is reporting that their plane is being overrun by snakes. They need to land at your airport.", OPTION_REPOSITORY.Snakes_on_plane()))); //Randomizes the snake plane inside
+        Request_List.add(new REQUEST(10, "SNAKES ON PLANE", "A pilot is reporting that their plane is being overrun by snakes. They need to land at your airport.", OPTION_REPOSITORY.Snakes_on_plane())); //Randomizes the snake plane inside
         Request_List.add(new REQUEST(15, "JUMBO JET", "A Large Aircraft Carrying a lot of passengers wishes to land.", OPTION_REPOSITORY.Jumbo_Plane())); //Randomizes the jumbo plane inside
         Request_List.add(new REQUEST(5, "EMERGENCY LANDING", "A plane has very low amount of fuel and needs to land in the most brief delays.", OPTION_REPOSITORY.Emergency_Landing())); //Randomizes the Emergency plane inside
         Request_List.add(new REQUEST(40, "PLANE LANDING", "A plane needs to land at your airport.", OPTION_REPOSITORY.Standard_Plane()));
