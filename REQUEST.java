@@ -19,34 +19,25 @@ public class REQUEST {
         return Rarity;
     }
 
-    public String getTitle() {
-        return Title;
-    }
-
-    public String getDescription() {
-        return Description;
-    }
-
-    public List<OPTION> getRequests_Options() {
-        return Requests_Options;
-    }
-
     public void Choose_Option(int Option) {
 
     }
 
 
     public String toString() {
-        StringBuilder list = new StringBuilder();
-        for (int i = 0; i < Requests_Options.size(); i ++){
-            
-            list.append(Integer.toString(i)).append(")").append(Requests_Options.get(i).toString());
+        StringBuilder Options = new StringBuilder();
+        for (int i = 0; i < Requests_Options.size(); i++) {
+            Options.append("OPTION ").append(i).append("\n------ *\n");
+            Options.append(Requests_Options.get(i));
+            Options.append("~".repeat(8)).append(" *\n");
         }
-        return "\n---------REQUEST---------  \n"
-                + "   Rarity = " + Rarity +
-                "\n   Title = " + Title +
-                "\n   Description = " + Description + "\n\n" + 
-                list ; 
+        return "-".repeat(Title.length() * 2) + " *\n"
+                + Title + "\n"
+                + "-".repeat(Title.length()) + " *\n"
+                + Description + "\n"
+                + "-".repeat(Title.length() * 2) + " *\n"
+                + Options + "\n"
+                + "#".repeat(Title.length() * 4) + "\n";
     }
 
 

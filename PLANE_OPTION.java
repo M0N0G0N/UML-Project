@@ -10,10 +10,11 @@ public class PLANE_OPTION extends OPTION{
         Waiting_Planes_In_The_Air = waiting_Planes_In_The_Air;
     }
 
-    public void Consequences() { //Just call the method when needed, it will do the rest.
+    public boolean Consequences() { //Just call the method when needed, it will do the rest.
         for (int i = 0; i < WAITING_PLANES_MENU.Call_For_Waiting_Planes(); i++) {
             WAITING_PLANES_MENU.Planes.get(i).Add_Fuel(Refuel_Time); //Adds fuel in the tank of flying planes.
         }
+        return false;
     }
 
     public boolean IsValid() { //Checks if the requirements are met.

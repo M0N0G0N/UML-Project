@@ -14,21 +14,24 @@ public class RUNWAY_OPTION extends OPTION{
         super(option_Desc, requirement, consequences);
         Affected_Plane = affected_Plane;
         Runways_Affected = runways_Affected;
+        Needs_To_Be_Empty = true;
     }
 
-    public RUNWAY_OPTION(String option_Desc, String requirement, String consequences, boolean empty_Runway, int runways_Affected) { //Use this constructor when you want to free or occupy a random Runway as an event.
+    public RUNWAY_OPTION(String option_Desc, String requirement, String consequences, boolean empty_Runway, int runways_Affected, boolean needs_To_Be_Empty) { //Use this constructor when you want to free or occupy a random Runway as an event.
         super(option_Desc, requirement, consequences);
         Empty_Runway = empty_Runway;
         Runways_Affected = runways_Affected;
+        Needs_To_Be_Empty = needs_To_Be_Empty;
     }
 
-    public RUNWAY_OPTION(String option_Desc, String requirement, String consequences, int lockdown, int runways_Affected) { //Use this constructor when you want to free or occupy a random Runway as an event.
+    public RUNWAY_OPTION(String option_Desc, String requirement, String consequences, int lockdown, int runways_Affected, boolean needs_To_Be_Empty) { //Use this constructor when you want to free or occupy a random Runway as an event.
         super(option_Desc, requirement, consequences);
         Lockdown = lockdown;
         Runways_Affected = runways_Affected;
+        Needs_To_Be_Empty = needs_To_Be_Empty;
     }
 
-    public void Consequences() { //Simply use this when the option is chosen, the method will do the rest.
+    public boolean Consequences() { //Simply use this when the option is chosen, the method will do the rest.
         List<Integer> Affected_Runways = new ArrayList<>();
         Affected_Runways = RUNWAY_MENU.Call_For_Available(Needs_To_Be_Empty, Runways_Affected);
         for (Integer runway_Indexes : Affected_Runways) {
@@ -49,9 +52,12 @@ public class RUNWAY_OPTION extends OPTION{
                 RUNWAY_MENU.Delete_Runway(runway_Indexes); //Occupies a runway for the rest of the game.
             }
         }
+        return false;
     }
 
     public boolean IsValid() {   // Option valid if there are runway_number number of runways either empty or full [Is_Empty == True -> Empty Runways]
+        System.out.println("The fucking thing is" + Needs_To_Be_Empty);
+        System.out.println("There are : " + RUNWAY_MENU.Call_For_Available(Needs_To_Be_Empty, Runways_Affected).size() + " EMPTY RUNWAYS\nWE ARE RETURNING " + (RUNWAY_MENU.Call_For_Available(Needs_To_Be_Empty, Runways_Affected).size() >= Runways_Affected));
         return RUNWAY_MENU.Call_For_Available(Needs_To_Be_Empty, Runways_Affected).size() >= Runways_Affected;
     }
 }

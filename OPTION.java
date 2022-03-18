@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.ArrayList;
-
 //FAIRE DES SOUS CLASSES
 
 public class OPTION {
@@ -15,17 +13,20 @@ public class OPTION {
         Consequences = consequences;
     }
 
-    public void Display_Option() {
+    public boolean IsValid() { //Apparently we need this, because the IDE doesn't look into the extensions otherwise.
+        return true;
+    }
 
+    public boolean Consequences() { //We have to create this, so the Java has something to overwrite.
+        return false; //Returns false if the choice makes the request disappear, true if the  choice makes the request wait for next hour.
     }
 
     public String toString() {
-        return "\nOPTION \n"
-                + "   Description = " + Option_Desc +
-                "\n   Requirement = " + Requirement +
-                "\n   Consequence = " + Consequences +
-                "\n" ;  
+        return Option_Desc
+                + "\n---- *\n"
+                + "Requirements : " + Requirement
+                + "\n---- *\n"
+                + "Consequences : " + Consequences
+                + "\n";
     }
-
-
 }

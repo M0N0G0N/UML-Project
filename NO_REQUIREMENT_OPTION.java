@@ -21,22 +21,24 @@ public class NO_REQUIREMENT_OPTION extends OPTION{
         Add_Wait_Time = add_Wait_Time;
     }
 
-    public void Consequences() {
-        if (Plane != null) {
+    public boolean Consequences() {
+        if (Plane != null) { //If we passed a plane here, then it means that we have to let it wait. And then we have to give this one to Next_Hour_Requests
             WAITING_PLANES_MENU.Add_Plane(Plane);
+            return true;
         }
-        if (Save_And_Kill_People != null) {
+        if (Save_And_Kill_People != null) { //If we have any people to save or kill, then it means we do it there
             ADVANCE_HOUR_MENU.setPassengers(ADVANCE_HOUR_MENU.Passengers + Save_And_Kill_People);
         }
         if (Add_Fuel != null && WAITING_PLANES_MENU.Planes != null) { //We have to have planes in the air to give them fuel
             for (PLANE planes : WAITING_PLANES_MENU.Planes) {
-                planes.Add_Fuel(Add_Fuel);
+                planes.Add_Fuel(Add_Fuel); //We add or take away fuel
             }
         }
-        if (Add_Wait_Time != null && RUNWAY_MENU.Call_For_Available(true, 1).size() > 0) {
+        if (Add_Wait_Time != null && RUNWAY_MENU.Call_For_Available(true, 1).size() > 0) { //If we have *any* runway occupied
             for (RUNWAY runways : RUNWAY_MENU.Runways) {
-                runways.Add_Occupied_Time(Add_Wait_Time);
+                runways.Add_Occupied_Time(Add_Wait_Time); //We mess with their fuel ÒwÓ
             }
         }
+        return false;
     }
 }

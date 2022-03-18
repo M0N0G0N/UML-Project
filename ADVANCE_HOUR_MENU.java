@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ADVANCE_HOUR_MENU extends MENU{
-    static int Passengers; //Dead people that the player killed by negligence and poor planning skills.
-    static int Current_Time; //Current hour.
+    static int Passengers = 0; //Dead people that the player killed by negligence and poor planning skills.
+    static int Current_Time = 0; //Current hour.
     static List<String> Past_Hour_Events = new ArrayList<>(); //Everything that happened in the last hour.
     static int Request_Number; //Number of requests available.
 
     public ADVANCE_HOUR_MENU(){
-        
+        Request_Number = REQUESTS_MENU.Chosen_Request.size();
+        System.out.println("YOU HAVE NOW " + Request_Number + " NEW REQUESTS.");
     }
 
     public static void Display_Advance_Hour_Menu() {
@@ -29,7 +30,7 @@ public class ADVANCE_HOUR_MENU extends MENU{
         }
         Past_Hour_Events.clear();
         REQUESTS_MENU.Choose_Request();
-        Request_Number = REQUESTS_MENU.Request_List.size();
+        Request_Number = REQUESTS_MENU.Chosen_Request.size();
         System.out.println("YOU HAVE NOW " + Request_Number + " NEW REQUESTS.");
         System.out.println("THERE ARE NOW " + Passengers + " DEAD PASSENGERS. ");
         Display_Game_Over();
@@ -44,6 +45,7 @@ public class ADVANCE_HOUR_MENU extends MENU{
     }
 
     public static boolean Can_Be_Displayed() {
+        Request_Number = REQUESTS_MENU.Chosen_Request.size();
         return Request_Number == 0;
     }
 
