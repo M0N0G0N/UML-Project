@@ -26,10 +26,6 @@ public class WAITING_PLANES_MENU extends MENU{
         }
     }
 
-    public static void Remove_Plane() {
-        Planes.remove();
-    }
-
 
     //FIXME: unnecessary function?
     public boolean Can_Plane_Land() { //Return False if -1 is returned.
