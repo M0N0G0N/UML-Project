@@ -9,7 +9,7 @@ public class NO_REQUIREMENT_OPTION extends OPTION{
     Integer Save_And_Kill_People; //Leave null if unused. Will kill or save people (negative: save, positive: kill).
     Integer Add_Fuel; //Leave null if unused. Will remove or add fuel to planes (negative: remove fuel, positive: add fuel)
     Integer Add_Wait_Time; //Leave null if unused. Will add wait time to planes on runways (negative: remove wait time, positive: add wait time)
-    boolean Waiting_plane = false; //If true, checks if there are any waiting planes in the air. Remove an random waiting plane
+    boolean Waiting_plane = false; //If true, checks if there are any waiting planes in the air. Remove a random waiting plane
 
 
     public NO_REQUIREMENT_OPTION(String option_Desc, String requirement, String consequences, PLANE plane) {

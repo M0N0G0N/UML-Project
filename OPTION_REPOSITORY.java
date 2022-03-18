@@ -48,17 +48,16 @@ public final class OPTION_REPOSITORY { //Add options here to use them in the REQ
     public static List<OPTION> Snakes_on_plane() {
     List<OPTION> Snakes_on_plane_Options = new ArrayList<>();
     PLANE Snakes_on_plane = new PLANE("SNAKES");
-        Snakes_on_plane_Options.add(new RUNWAY_OPTION("Let them land", "Free run way", "Plane will occupy runway for 7 hours", 7,1));
+        Snakes_on_plane_Options.add(new RUNWAY_OPTION("Let them land", "Free run way", "Plane will occupy runway for 7 hours", 7,1, true));
         Snakes_on_plane_Options.add(new NO_REQUIREMENT_OPTION("Refuse them", "None", "Counts as letting 50 people die", -50,null,null));
         return Snakes_on_plane_Options;
     }
 
-
     public static List<OPTION> Protests() {
         List<OPTION> Protests_Options = new ArrayList<>();
         PLANE Protest_Plane = new PLANE("PROTEST");
-        Protests_Options.add(new RUNWAY_OPTION("Allow them the space to protest", "free runway", "one runway will be blocked for 10 hours", 10, 1));
-        Protests_Options.add(new RUNWAY_OPTION("Get police involved", "2 free runways", "Two runways will be blocked for 4 hours", 4, 2));
+        Protests_Options.add(new RUNWAY_OPTION("Allow them the space to protest", "free runway", "one runway will be blocked for 10 hours", 10, 1, true));
+        Protests_Options.add(new RUNWAY_OPTION("Get police involved", "2 free runways", "Two runways will be blocked for 4 hours", 4, 2, true));
         Protests_Options.add(new NO_REQUIREMENT_OPTION("Let the planes lands anyways", "None", "Count as 100 passengers dying", 100, null,null));
         return Protests_Options;
     }
@@ -66,12 +65,8 @@ public final class OPTION_REPOSITORY { //Add options here to use them in the REQ
     public static List<OPTION> John_Mcclain() {
         List<OPTION> Join_mcclain_Options = new ArrayList<>();
         PLANE Protest_Plane = new PLANE("PROTEST");
-        Join_mcclain_Options.add(new RUNWAY_OPTION("Lockdown the runway", "free runway", "one runway will be blocked for 8 hours", 8, 1));
+        Join_mcclain_Options.add(new RUNWAY_OPTION("Lockdown the runway", "free runway", "one runway will be blocked for 8 hours", 8, 1, true));
         Join_mcclain_Options.add(new NO_REQUIREMENT_OPTION("Let the man go", "None", "He crashes the plane into another random Waiting planes and saves christmas. Remove the waiting plane (no cost) and kill 100 passengers", 100));
         return Join_mcclain_Options;
     }
-
-    
-
-
 }
