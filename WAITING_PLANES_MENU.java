@@ -62,8 +62,10 @@ public class WAITING_PLANES_MENU extends MENU{
         do {
             System.out.println("INPUT \"SELECT\" to select a plane to land") ; 
             System.out.println("INPUT \"MAIN\" to return to the main menu\n") ; 
-            choice = input.nextLine() ; 
-            choice.toUpperCase(); 
+            System.out.print("\nINPUT : ");
+            choice = input.nextLine();
+            //choice = choice.toUpperCase();
+    
             if (choice == "SELECT" ){
                 System.out.println("\n\n OKKKKKKKKKKK v\n\n") ; 
                 if (Can_Plane_Land()){
