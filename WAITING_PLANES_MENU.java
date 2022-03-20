@@ -2,6 +2,7 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Scanner;
 
 public class WAITING_PLANES_MENU extends MENU{
     static List<PLANE> Planes = new ArrayList<>();
@@ -48,16 +49,16 @@ public class WAITING_PLANES_MENU extends MENU{
         ADVANCE_HOUR_MENU.Collect_Events("PLANE " + Plane.name + " HAS LANDED ON A RUNWAY");
     }
 
-    public String display_Waiting_menu() {
+    public static void display_Waiting_menu() {
         System.out.println("----------Waiting planes--------");
         System.out.println("Plane name      | Fuel left      | Number of dead passengers       | Total number of passengers      | ");
         for (PLANE plane : Planes) {
             System.out.println(plane.name + "       | " + plane.Fuel_Left +  "       | "+ plane.Dead_Passengers +  "       | " + plane.Total_Passengers + "\n");
         }
         System.out.println("\n"); 
-        System.out.println("INPUT \"SELECT\" to select a plane to land") ; 
-        System.out.println("INPUT \"MAIN\" to return to the main menu") ; 
-        Scanner input = new Scanner(System.in); 
+        System.out.println("INPUT \"SELECT\" to select a plane to land");
+        System.out.println("INPUT \"MAIN\" to return to the main menu");
+        Scanner input = new Scanner(System.in);
     }
 
     public static int Call_For_Waiting_Planes() {

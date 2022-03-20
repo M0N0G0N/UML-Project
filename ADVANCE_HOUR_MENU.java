@@ -37,10 +37,9 @@ public class ADVANCE_HOUR_MENU extends MENU{
         System.out.println("YOU CAN DO IT!");
     }
 
-    public ADVANCE_HOUR_MENU(int passengers, int current_Time, int request_Number) {
+    public ADVANCE_HOUR_MENU(int passengers, int current_Time) { //Just in case we want to do a custom run
         Passengers = passengers;
         Current_Time = current_Time;
-        Request_Number = request_Number;
     }
 
     public static boolean Can_Be_Displayed() {

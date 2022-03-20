@@ -19,17 +19,12 @@ public class REQUEST {
         return Rarity;
     }
 
-    public void Choose_Option(int Option) {
-
-    }
-
-
     public String toString() {
         StringBuilder Options = new StringBuilder();
         for (int i = 0; i < Requests_Options.size(); i++) {
-            Options.append("OPTION ").append(i).append("\n------ *\n");
+            Options.append("                                           * ---------------------------------------- *\n");
+            Options.append("                                           |                 OPTION ").append(i).append("                 |\n");
             Options.append(Requests_Options.get(i));
-            Options.append("~".repeat(8)).append(" *\n");
         }
         return "-".repeat(Title.length() * 2) + " *\n"
                 + Title + "\n"
@@ -37,7 +32,7 @@ public class REQUEST {
                 + Description + "\n"
                 + "-".repeat(Title.length() * 2) + " *\n"
                 + Options + "\n"
-                + "#".repeat(Title.length() * 4) + "\n";
+                + "#".repeat(Title.length() * 30) + "\n";
     }
 
 
