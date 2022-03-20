@@ -70,11 +70,6 @@ public class RUNWAY_MENU extends MENU{
         return All_Runways; //If nothing was found then we return an empty list.
     }
 
-    /*
-    public boolean there_is_free_runway() {
-    }
-    */
-
     public static void Advance_hour_Runway() {
         for (RUNWAY runways : Runways) {
             runways.Add_Occupied_Time(-1);

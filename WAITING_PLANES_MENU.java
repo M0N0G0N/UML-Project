@@ -54,7 +54,7 @@ public class WAITING_PLANES_MENU extends MENU{
         Planes.remove(Plane);
         ADVANCE_HOUR_MENU.Collect_Events("PLANE " + Plane.name + " HAS LANDED ON A RUNWAY");
     }
-
+    
     public static int call_Waiting_menu() {  //return -1 to return to main menu 
         Display_Index() ; 
         String choice ; 
@@ -120,5 +120,5 @@ public class WAITING_PLANES_MENU extends MENU{
             planes.Add_Fuel(-1);
         }
     }
-
 }
+

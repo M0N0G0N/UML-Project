@@ -84,11 +84,13 @@ public class REQUESTS_MENU extends MENU {
     public static void Take_Care_Of_Requests(){
         Scanner scanner = new Scanner(System.in);
         String Request_choice;
-        System.out.println("Please input the name of the request you wish to take care of. If you wish to go back to the main menu, type \"EXIT\": ");
+        boolean Verified_Input = false; //We use this one to show the user if the command was correct or not
         do { //We await a valid name input
+            System.out.println("Please input the name of the request you wish to take care of. If you wish to go back to the main menu, type \"EXIT\": ");
             Request_choice = scanner.nextLine();
             for (REQUEST chosen_requests : Chosen_Request) { //For each Request
                 if (Objects.equals(Request_choice, chosen_requests.Title)) { //We see if the input matches the name of the Request
+                    Verified_Input = true;
                     do {
                         System.out.println("Please input the number of the option you wish to choose. Type \"CANCEL\" to cancel: "); //If it works, then we look into the available options
                         Request_choice = scanner.nextLine(); 
@@ -117,7 +119,9 @@ public class REQUESTS_MENU extends MENU {
                     break; //We have to break there, else the `for` continues iterating, creating an exception because we loop through when we erased an index in it.
                 }
             }
-            System.out.println("ERROR: INPUT NOT RECOGNIZED. PLEASE TRY AGAIN.");
+            if (!Verified_Input && !Objects.equals(Request_choice, "EXIT")) //If the command wasn't correct
+                System.out.println("ERROR: INPUT NOT RECOGNIZED. PLEASE TRY AGAIN.");
+            Verified_Input = false;
         } while (!Objects.equals(Request_choice, "EXIT"));
     }
 }
