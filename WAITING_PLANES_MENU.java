@@ -64,11 +64,10 @@ public class WAITING_PLANES_MENU extends MENU{
             System.out.println("INPUT \"MAIN\" to return to the main menu\n") ; 
             System.out.print("\nINPUT : ");
             choice = input.nextLine();
-            //choice = choice.toUpperCase();
+            choice = choice.toUpperCase();
     
-            if (choice == "SELECT" ){
-                System.out.println("\n\n OKKKKKKKKKKK v\n\n") ; 
-                if (Can_Plane_Land()){
+            if (Objects.equals(choice, "SELECT")){
+                if (Call_For_Waiting_Planes()>0 ){
                     String plane_to_land ; //name of the plane
                     do{
                         System.out.println("INPUT the name of the plane you want to land : ") ;
@@ -79,32 +78,37 @@ public class WAITING_PLANES_MENU extends MENU{
                         }
                     }while (Call_for_existing_plane(plane_to_land) != true );
                     Pass_To_Runway(plane_to_land) ; 
+                    return 0 ; 
                 }
                 else {
                     System.out.println("There's no plane to land");
+                    System.out.println("Return to main menu ? 'yes' or 'no' \nINPUT : ");
+                    choice = input.nextLine() ; 
+                    if (Objects.equals(choice, "yes")){
+                        return -1 ; 
+                    }
+                    else{
+                        return 0 ; 
+                    }
                 }
-                return 0 ; 
             }
-            else if (choice == "MAIN"){
+            else if (Objects.equals(choice, "MAIN")){
                 return -1 ; 
             }
             else {
                 System.out.println("ERROR INPUT try again \n ");
                 return 0 ; 
             }
-        }while (choice != "SELECT" && choice !="MAIN" ) ; 
-
+        }while (!Objects.equals(choice, "SELECT") && !Objects.equals(choice, "MAIN"));
     }
 
     public static boolean Call_for_existing_plane(String plane_name){
-        boolean exist = false ; 
         for (PLANES planes : Planes){
-            if (planes.getName == plane_name ){
-                exist = true ; 
-                break ; 
+            if (Objects.equals(planes.getName, plane_name)){
+                return true;
             }
         }
-        return exist ; 
+        return false ; 
     }
 
     public static int Call_For_Waiting_Planes() {
