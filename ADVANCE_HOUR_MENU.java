@@ -11,7 +11,7 @@ public class ADVANCE_HOUR_MENU extends MENU{
 
     public ADVANCE_HOUR_MENU(){
         Request_Number = REQUESTS_MENU.Chosen_Request.size();
-        System.out.println("YOU HAVE NOW " + Request_Number + " NEW REQUESTS.");
+        System.out.println("\nYOU HAVE NOW " + Request_Number + " NEW REQUESTS.");
     }
 
     public static void Display_Advance_Hour_Menu() {

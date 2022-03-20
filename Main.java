@@ -46,45 +46,45 @@ public class Main {
             */
             switch (menu) {
                 case "MAIN MENU" -> {
-                    System.out.println("-----------MAIN MENU----------\n");
+                    System.out.println("\n-----------MAIN MENU----------\n");
                     MAIN_MENU.Display_Info();
                     System.out.println("-----------Menu Options----------\n");
                     if (requests_menu.Can_Be_Displayed()) {
                         System.out.println("  Display Requests: input \"REQUEST MENU\"");
                     } else if (ADVANCE_HOUR_MENU.Can_Be_Displayed()) {
-                        System.out.println("  Advance to the next hour: input \"ADVANCE HOUR\"");
+                        System.out.println("\n  Advance to the next hour: input \"ADVANCE HOUR\"");
                     }
-                    System.out.println("  Waiting Planes Menu: input \"WAITING PLANES\"");
-                    System.out.println("  Runway Menu: input \"RUNWAY MENU\"");
-                    System.out.println("  Exit: input \"Exit\"");
-                    System.out.print("INPUT : ");
+                    System.out.println("\n  Waiting Planes Menu: input \"WAITING PLANES\"");
+                    System.out.println("\n  Runway Menu: input \"RUNWAY MENU\"");
+                    System.out.println("\n  Exit: input \"Exit\"");
+                    System.out.print("\nINPUT : ");
                     menu = input.nextLine();
                     menu = menu.toUpperCase();
                 }
                 case "RUNWAY MENU" -> {
-                    System.out.println("-----------RUNWAY MENU-----------\n");
+                    System.out.println("\n-----------RUNWAY MENU-----------\n");
                     RUNWAY_MENU.Display_Index();
                     menu = "MAIN MENU";
                 }
                 case "REQUEST MENU" -> {
                     if (!requests_menu.Can_Be_Displayed()) {
-                        System.out.println("ERROR: UNABLE TO PROCEED WITH COMMAND");
+                        System.out.println("\nERROR: UNABLE TO PROCEED WITH COMMAND");
                     } else {
-                        System.out.println("-----------REQUESTS MENU-----------\n");
+                        System.out.println("\n-----------REQUESTS MENU-----------\n");
                         REQUESTS_MENU.Display_requests_menu();
                     }
                     menu = "MAIN MENU";
                 }
                 case "WAITING PLANES" -> {
-                    System.out.println("-----------WAITING PLANES MENU-----------\n");
+                    System.out.println("\n-----------WAITING PLANES MENU-----------\n");
                     WAITING_PLANES_MENU.display_Waiting_menu();
                     menu = "MAIN MENU";
                 }
                 case "ADVANCE HOUR" -> {
                     if (!ADVANCE_HOUR_MENU.Can_Be_Displayed()) {
-                        System.out.println("ERROR: UNABLE TO PROCEED WITH COMMAND");
+                        System.out.println("\nERROR: UNABLE TO PROCEED WITH COMMAND");
                     } else {
-                        System.out.println("-----------ADVANCE HOUR MENU-----------\n");
+                        System.out.println("\n-----------ADVANCE HOUR MENU-----------\n");
                         ADVANCE_HOUR_MENU.Display_Advance_Hour_Menu();
                         ADVANCE_HOUR_MENU.Advance_Hour();
                     }
@@ -95,7 +95,7 @@ public class Main {
                     menu = "MAIN MENU";
                 }
                 default -> {
-                    System.out.println("ERROR: COMMAND NOT RECOGNIZED");
+                    System.out.println("\nERROR: COMMAND NOT RECOGNIZED");
                     menu = "MAIN MENU";
                 }
             }

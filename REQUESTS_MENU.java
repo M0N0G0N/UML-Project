@@ -91,7 +91,8 @@ public class REQUESTS_MENU extends MENU {
                 if (Objects.equals(Request_choice, chosen_requests.Title)) { //We see if the input matches the name of the Request
                     do {
                         System.out.println("Please input the number of the option you wish to choose. Type \"CANCEL\" to cancel: "); //If it works, then we look into the available options
-                        Request_choice = scanner.nextLine();
+                        Request_choice = scanner.nextLine(); 
+                        
                         try { //We're going to try to see if: the input is a number || the number is part of the array.
                             if (chosen_requests.Requests_Options.get(parseInt(Request_choice)).IsValid()) { //If the command is valid && Syntactically correct,
                                 boolean Is_For_Next_Hour = chosen_requests.Requests_Options.get(parseInt(Request_choice)).Consequences(); //Then we trigger the consequences
