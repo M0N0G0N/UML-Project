@@ -77,7 +77,10 @@ public class Main {
                 }
                 case "WAITING PLANES" -> {
                     System.out.println("\n-----------WAITING PLANES MENU-----------\n");
-                    WAITING_PLANES_MENU.display_Waiting_menu();
+                    int option ; 
+                    do{
+                        option = WAITING_PLANES_MENU.call_Waiting_menu();
+                    }while (option != -1 );            
                     menu = "MAIN MENU";
                 }
                 case "ADVANCE HOUR" -> {
