@@ -1,8 +1,5 @@
 package com.company;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
 
 public class WAITING_PLANES_MENU extends MENU{
     static List<PLANE> Planes = new ArrayList<>();
@@ -103,8 +100,8 @@ public class WAITING_PLANES_MENU extends MENU{
     }
 
     public static boolean Call_for_existing_plane(String plane_name){
-        for (PLANES planes : Planes){
-            if (Objects.equals(planes.getName, plane_name)){
+        for (PLANE planes : Planes){
+            if (Objects.equals(planes.getName(), plane_name)){
                 return true;
             }
         }
@@ -116,8 +113,9 @@ public class WAITING_PLANES_MENU extends MENU{
     }
 
     public static void Advance_hour_Waiting_Planes() {
-        for (PLANE planes : Planes) {
-            planes.Add_Fuel(-1);
+        Iterator<PLANE> planes = Planes.listIterator();
+        while (planes.hasNext()) {
+            planes.next().Add_Fuel(-1);
         }
     }
 }

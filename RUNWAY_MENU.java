@@ -16,8 +16,6 @@ public class RUNWAY_MENU extends MENU{
             System.out.println("All runways are Freed.");
             return;
         }
-        System.out.println("Current occupied runway: " + Runways.size());
-        System.out.println("Name of the runway");
         int Biggest_Name = 0;
         for (RUNWAY runways : Runways) {
             try {
@@ -29,7 +27,7 @@ public class RUNWAY_MENU extends MENU{
         if (Biggest_Name % 2 != 0)
             Biggest_Name++;
         System.out.println("* -" + " -".repeat((84 + Biggest_Name) / 2) + " *");
-        System.out.println("| NUMBER OF RUNWAYS LEFT : " + Runways.size() + "  ".repeat(((62 + Biggest_Name) / 2) - String.valueOf(Runways.size()).length()) + "|");
+        System.out.println("| NUMBER OF FREE RUNWAYS : " + Call_For_Available(true, 8).size() + "  ".repeat(((62 + Biggest_Name) / 2) - String.valueOf(Runways.size()).length()) + "|");
         System.out.println("* -" + " -".repeat((84 + Biggest_Name) / 2) + " *");
         System.out.println("| RUNWAY INDEX | OCCUPYING PLANE " + " ".repeat(Math.abs(Biggest_Name - 15)) + "| NUMBER OF HOURS LEFT | NUMBER OF DEAD PASSENGERS | TOTAL PASSENGERS |");
         System.out.println("* -" + " -".repeat((84 + Biggest_Name) / 2) + " *");
@@ -56,12 +54,15 @@ public class RUNWAY_MENU extends MENU{
     public static List<Integer> Call_For_Available(boolean Free, int Number_Of_Runways) { //If free is true, then we look to see if there's Number_Of_Runways runways that's freed of any plane. If false, then we look to see for the first runways that's occupied.
         List<Integer> All_Runways = new ArrayList<>();
         for (int i = 0; i < Runways.size(); i++) {
+            System.out.println("RUNWAY NUMBER " + i + " : PLANE = " + Runways.get(i).getLandedPlane() + " , OCCUPIED TIME REMAINING: " + Runways.get(i).getOccupied_Time_Remaining() + ".\n");
             if ((Runways.get(i).getLandedPlane() == null && Runways.get(i).getOccupied_Time_Remaining() == 0) && Free) { //If free is true and there's nothing here, we return the whole list
+                System.out.println("This Runway is Free.");
                 All_Runways.add(i);
                 if (All_Runways.size() == Number_Of_Runways)
                     return All_Runways;
             }
             else if ((Runways.get(i).getLandedPlane() != null || Runways.get(i).getOccupied_Time_Remaining() != 0)  && !Free) { //If free is false and there's a plane here, we return whole list
+                System.out.println("This Runway is NOT Free.");
                 All_Runways.add(i);
                 if (All_Runways.size() == Number_Of_Runways)
                     return All_Runways;

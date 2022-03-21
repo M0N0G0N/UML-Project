@@ -41,23 +41,24 @@ public final class OPTION_REPOSITORY { //Add options here to use them in the REQ
         List<OPTION> Bad_Weather_Options = new ArrayList<>();
         Bad_Weather_Options.add(new NO_REQUIREMENT_OPTION("Cross winds", "None", "Remove 1 hour of fuel from all waiting planes in air", null,-1,null));
         Bad_Weather_Options.add(new NO_REQUIREMENT_OPTION("Icy runways", "None", "Add 2 hours wait time to all planes waiting in runway", null, null,2));
-        Bad_Weather_Options.add(new RUNWAY_OPTION("Ice storm", "At least 1 runway", "Remove a runway",false,-1, true));
+        Bad_Weather_Options.add(new RUNWAY_OPTION("Ice storm", "At least 1 runway", "Remove a runway",false,1, true));
         return Bad_Weather_Options;
     }
 
     public static List<OPTION> Snakes_on_plane() {
     List<OPTION> Snakes_on_plane_Options = new ArrayList<>();
     PLANE Snakes_on_plane = new PLANE("SNAKES");
-        Snakes_on_plane_Options.add(new RUNWAY_OPTION("Let them land", "Free run way", "Plane will occupy runway for 7 hours", 7,1, true));
-        Snakes_on_plane_Options.add(new NO_REQUIREMENT_OPTION("Refuse them", "None", "Counts as letting 50 people die", -50,null,null));
+        Snakes_on_plane_Options.add(new RUNWAY_OPTION("Let them land", "Free run way", "Plane will occupy runway for 7 hours", Snakes_on_plane,1));
+        Snakes_on_plane_Options.add(new NO_REQUIREMENT_OPTION("Refuse them", "None", "Counts as letting 50 people die", 50,null,null));
         return Snakes_on_plane_Options;
     }
 
     public static List<OPTION> Protests() {
         List<OPTION> Protests_Options = new ArrayList<>();
         PLANE Protest_Plane = new PLANE("PROTEST");
-        Protests_Options.add(new RUNWAY_OPTION("Allow them the space to protest", "free runway", "one runway will be blocked for 10 hours", 10, 1, true));
-        Protests_Options.add(new RUNWAY_OPTION("Get police involved", "2 free runways", "Two runways will be blocked for 4 hours", 4, 2, true));
+        PLANE Police_Protest_Plane = new PLANE("POLICE");
+        Protests_Options.add(new RUNWAY_OPTION("Allow them the space to protest", "free runway", "one runway will be blocked for 10 hours", Protest_Plane, 1));
+        Protests_Options.add(new RUNWAY_OPTION("Get police involved", "2 free runways", "Two runways will be blocked for 4 hours", Police_Protest_Plane, 2));
         Protests_Options.add(new NO_REQUIREMENT_OPTION("Let the planes lands anyways", "None", "Count as 100 passengers dying", 100, null,null));
         return Protests_Options;
     }

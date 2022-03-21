@@ -48,7 +48,7 @@ public class ADVANCE_HOUR_MENU extends MENU{
     }
 
     public static void Display_Game_Over() {
-            if (Passengers >= 350){
+            if (Passengers >= 5000000){
                 System.out.println("-----------GAME OVER ...----------\n") ;
                 System.exit(0);
         }

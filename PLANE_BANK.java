@@ -8,8 +8,16 @@ public final class PLANE_BANK { //This class is used so we can generate a name, 
     static final String[] Countries = {"CANADA", "FRANCE", "USA", "MEXICO", "BRAZIL", "GERMANY", "EGYPT", "CHINA", "JAPAN", "INDIA", "AUSTRALIA", "LIGMA", "COSMOS", "GALAXY", "APERTURE"};
     static final char[] Letters = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 
-    public static String Get_Random_Name() { //A name is constructed as follows: COUNTRY + SUFFIX + LETTER + INTEGER[1;5000].
-        return Countries[ThreadLocalRandom.current().nextInt(0, Countries.length)]+ " " + Suffix[ThreadLocalRandom.current().nextInt(0, Suffix.length)] + " " + Letters[ThreadLocalRandom.current().nextInt(0, Letters.length)] + ThreadLocalRandom.current().nextInt(1, 5000 + 1);
+    public static String Get_Random_Name(String Plane_Type) { //A name is constructed as follows: COUNTRY + SUFFIX + LETTER + INTEGER[1;5000].
+        if (!Objects.equals(Plane_Type, "SNAKES") && !Objects.equals(Plane_Type, "PROTEST") && !Objects.equals(Plane_Type, "POLICE") && !Objects.equals(Plane_Type, "SNAKES"))
+            return Countries[ThreadLocalRandom.current().nextInt(0, Countries.length)]+ " " + Suffix[ThreadLocalRandom.current().nextInt(0, Suffix.length)] + " " + Letters[ThreadLocalRandom.current().nextInt(0, Letters.length)] + ThreadLocalRandom.current().nextInt(1, 5000 + 1);
+        else if (Objects.equals(Plane_Type, "PROTEST"))
+            return "PROTESTS";
+        else if (Objects.equals(Plane_Type, "POLICE"))
+            return "POLICE AND PROTESTORS";
+        else
+            return "SNAKES " + Suffix[ThreadLocalRandom.current().nextInt(0, Suffix.length)] + " " + Letters[ThreadLocalRandom.current().nextInt(0, Letters.length)] + ThreadLocalRandom.current().nextInt(1, 5000 + 1);
+
     }
 
     public static int Gen_Total_Passengers(String PLANE_TYPE) { //Depending on the plane type, this method generates a number of total passengers.
@@ -18,6 +26,9 @@ public final class PLANE_BANK { //This class is used so we can generate a name, 
         }
         else if (Objects.equals(PLANE_TYPE, "SNAKES")){
             return 50;
+        }
+        else if (Objects.equals(PLANE_TYPE, "PROTEST") || Objects.equals(PLANE_TYPE, "POLICE")){
+            return 100;
         }
         else {
             return ThreadLocalRandom.current().nextInt(100, 500);
@@ -31,11 +42,11 @@ public final class PLANE_BANK { //This class is used so we can generate a name, 
         else if (Objects.equals(PLANE_TYPE, "EMERGENCY")) {
             return ThreadLocalRandom.current().nextInt(1, 3 + 1);
         }
-        else if (Objects.equals(PLANE_TYPE, "SNAKES")) {
+        else if (Objects.equals(PLANE_TYPE, "SNAKES") || Objects.equals(PLANE_TYPE, "PROTESTS") || Objects.equals(PLANE_TYPE, "POLICE")) {
             return 0;
         }
         else {
-            return ThreadLocalRandom.current().nextInt( 3, 5 + 1);
+            return ThreadLocalRandom.current().nextInt( 0, 0 + 1);
         }
     }
 
@@ -46,8 +57,11 @@ public final class PLANE_BANK { //This class is used so we can generate a name, 
         else if (Objects.equals(PLANE_TYPE, "EMERGENCY")) {
             return ThreadLocalRandom.current().nextInt( 3, 5 + 1);
         }
-        else if (Objects.equals(PLANE_TYPE, "SNAKES")) {
+        else if (Objects.equals(PLANE_TYPE, "PROTEST") || Objects.equals(PLANE_TYPE, "SNAKES")){
             return 8;
+        }
+        else if (Objects.equals(PLANE_TYPE, "POLICE")) {
+            return 4;
         }
         else {
             return ThreadLocalRandom.current().nextInt( 1, 4 + 1);
