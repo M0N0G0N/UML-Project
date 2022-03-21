@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
+import javax.print.CancelablePrintJob;
+
 public class WAITING_PLANES_MENU extends MENU{
     static List<PLANE> Planes = new ArrayList<>();
 
@@ -67,7 +69,7 @@ public class WAITING_PLANES_MENU extends MENU{
             choice = choice.toUpperCase();
     
             if (Objects.equals(choice, "SELECT")){
-                if (Call_For_Waiting_Planes()>0 ){
+                if (Call_For_Waiting_Planes()>0 || Can_Plane_Land() ){
                     String plane_to_land ; //name of the plane
                     do{
                         System.out.println("INPUT the name of the plane you want to land : ") ;
