@@ -21,6 +21,10 @@ public class OPTION {
         return false; //Returns false if the choice makes the request disappear, true if the  choice makes the request wait for next hour.
     }
 
+    public PLANE getAffectedPlane() {
+        return null;
+    }
+
     public String toString() {
         String LeftAlignFormat = "| %-40s | %-40s | %-60s |\n";
         return  "* ---------------------------------------- * ---------------------------------------- * ------------------------------------------------------------ *\n" +

@@ -81,6 +81,19 @@ public class REQUESTS_MENU extends MENU {
         Next_Hour_Request.clear(); //We clear the Next_Hour_Request list.
     }
 
+    public static void Remote_Validate_Request(String Plane_Name) {
+        for (REQUEST parse_requests : Chosen_Request) {
+            if (parse_requests.Requests_Options.get(0) instanceof RUNWAY_OPTION) { //If the option we are in is a RUNWAY_OPTION
+                if (Objects.equals(parse_requests.Requests_Options.get(0).getAffectedPlane().getName(), Plane_Name)) { //If the plane is in that RUNWAY_OPTION
+                    parse_requests.Requests_Options.get(0).Consequences();
+                    Chosen_Request.remove(parse_requests);
+                    System.out.println("PLANE LANDED SUCCESSFULLY");
+                    return;
+                }
+            }
+        }
+    }
+
     public static void Take_Care_Of_Requests(){
         Scanner scanner = new Scanner(System.in);
         String Request_choice;
