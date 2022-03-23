@@ -53,7 +53,7 @@ public class RUNWAY_OPTION extends OPTION{
                 RUNWAY_MENU.Runways.get(runway_Indexes).Free_Runway(); //Frees a Runway.
             }
             else {
-                RUNWAY_MENU.Delete_Runway(runway_Indexes); //Occupies a runway for the rest of the game.
+                RUNWAY_MENU.Occupy_Runway(runway_Indexes); //Occupies a runway for the rest of the game.
             }
         }
         return false;

@@ -45,7 +45,7 @@ public class RUNWAY_MENU extends MENU{
         }
     }
 
-    public static void Delete_Runway (int To_Delete) { //To_Delete is the index of the Runway we want to ""Occupy""
+    public static void Occupy_Runway(int To_Delete) { //To_Delete is the index of the Runway we want to ""Occupy""
         Runways.get(To_Delete).Free_Runway();
         Runways.get(To_Delete).Add_Occupied_Time(72);//Removes the runway at a specific index
         ADVANCE_HOUR_MENU.Collect_Events("RUNWAY " + To_Delete + " HAS BEEN FROZEN, AND IS NOW UNUSABLE.");
