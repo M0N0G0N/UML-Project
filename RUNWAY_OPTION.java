@@ -31,7 +31,7 @@ public class RUNWAY_OPTION extends OPTION{
         Needs_To_Be_Empty = needs_To_Be_Empty;
     }
 
-    public PLANE getAffected_Plane() {
+    public PLANE getAffectedPlane() {
         return Affected_Plane;
     }
 

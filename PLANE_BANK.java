@@ -46,7 +46,7 @@ public final class PLANE_BANK { //This class is used so we can generate a name, 
             return 0;
         }
         else {
-            return ThreadLocalRandom.current().nextInt( 0, 0 + 1);
+            return ThreadLocalRandom.current().nextInt( 3, 5 + 1);
         }
     }
 

@@ -65,7 +65,6 @@ public final class OPTION_REPOSITORY { //Add options here to use them in the REQ
 
     public static List<OPTION> John_Mcclain() {
         List<OPTION> Join_mcclain_Options = new ArrayList<>();
-        PLANE Protest_Plane = new PLANE("PROTEST");
         Join_mcclain_Options.add(new RUNWAY_OPTION("Lockdown the runway", "free runway", "one runway will be blocked for 8 hours", 8, 1, true));
         Join_mcclain_Options.add(new NO_REQUIREMENT_OPTION("Let the man go", "None", "He crashes the plane into another random Waiting planes and saves christmas. Remove the waiting plane (no cost) and kill 100 passengers", 100));
         return Join_mcclain_Options;
