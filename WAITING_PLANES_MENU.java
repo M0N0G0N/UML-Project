@@ -7,7 +7,6 @@ public class WAITING_PLANES_MENU extends MENU{
     static List<PLANE> Planes = new ArrayList<>();
 
     public WAITING_PLANES_MENU() { //The constructor starts with no planes, but will add more once Create_Plane is called.
-
     }
 
     public static void Add_Plane(PLANE NEW_PLANE) {
@@ -36,15 +35,6 @@ public class WAITING_PLANES_MENU extends MENU{
     //FIXME: unnecessary function?
     public static boolean Can_Plane_Land() { //Return False if nothing is returned.
         return RUNWAY_MENU.Call_For_Available(true, 1).size() != 0;  //TODO : Use "there_is_free_runway" functions
-    }
-
-    public static void Pass_To_Runway(String name) {
-        for (PLANE plane : Planes) {
-            if (Objects.equals(name, plane.getName())) {
-                Pass_To_Runway(plane);
-                return;
-            }
-        }
     }
 
     public static void Pass_To_Runway(PLANE Plane) {
